@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Koleksi - Museum Perkebunan Indonesia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/page_collection.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/background.css">
+</head>
+<body>
+
+<header>
+    <div class="logo-container">
+        <img src="../images/logo.png" alt="Logo" class="logo">
+        <div class="museum-name">Museum Perkebunan Indonesia</div>
+    </div>
+
+
+        <!-- Tombol hamburger untuk mobile -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+    </button>
+
+
+    <ul class="navbar" id="navbar">
+        <li>
+            <a href="home.html"><i class="fas fa-home icon"></i>Beranda</a>
+        </li>
+        <li>
+            <a href="collection.html"><i class="fas fa-th icon"></i>Koleksi</a>
+        </li>
+        <li>
+            <a href="activity.html"><i class="fas fa-calendar-alt icon"></i>Kegiatan</a>
+        </li>
+        <li>
+            <a href="news.html"><i class="fas fa-newspaper icon"></i>Berita</a>
+        </li>
+        <li>
+            <a href="profile.html"><i class="fas fa-info-circle icon"></i>Profil Kami</a>
+        </li>
+    </ul>
+</header>
+
+<main class="collection-detail">
+    <div class="detail-container">
+        <nav class="breadcrumb">
+            <a href="#">Beranda</a>
+            <i class="fas fa-chevron-right"></i>
+            <a href="#">Koleksi</a>
+            <i class="fas fa-chevron-right"></i>
+            <span>Kompor Kuno</span>
+        </nav>
+        
+        <div class="detail-grid">
+            <div class="detail-media">
+                <div class="main-image">
+                    <img src="../images/Kompor.jpg" alt="Alat Tani Kuno" id="mainImage">
+                    <button class="zoom-button" aria-label="Zoom image">
+                        <i class="fas fa-search-plus"></i>
+                    </button>
+                </div>
+            </div>
+
+            <article class="detail-info">
+                <header>
+                    <h1 class="detail-title">Kompor Kuno</h1>
+                    <div class="detail-meta">
+                        <span class="category"><i class="fas fa-tag"></i> Peralatan Dapur</span>
+                        <span class="date"><i class="far fa-calendar-alt"></i> Ditambahkan: 15 Maret 2024</span>
+                    </div>
+                </header>
+                
+                <div class="detail-content">
+                    <section class="description">
+                        <h2><i class="fas fa-align-left icon-section"></i> Deskripsi Koleksi</h2>
+                        <p>Kompor kayu kuno berbahan besi ini digunakan sebagai alat memasak tradisional di masa lalu, terutama sebelum era kompor gas dan listrik. Kompor ini biasanya menggunakan kayu bakar atau arang sebagai sumber panas dan banyak dijumpai di rumah-rumah atau dapur lawas di Indonesia.</p>
+                    </section>
+
+                    <section class="specifications">
+                        <h2><i class="fas fa-list-alt icon-section"></i> Spesifikasi</h2>
+                        <div class="spec-grid">
+                            <div class="spec-item">
+                                <i class="fas fa-ruler-combined"></i>
+                                <div>
+                                    <h3>Dimensi</h3>
+                                    <p>80cm x 50cm x 60cm</p>
+                                </div>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-weight-hanging"></i>
+                                <div>
+                                    <h3>Berat</h3>
+                                    <p>± 30 kg</p>
+                                </div>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-layer-group"></i>
+                                <div>
+                                    <h3>Material</h3>
+                                    <p>Besi Cor</p>
+                                </div>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-heart"></i>
+                                <div>
+                                    <h3>Kondisi</h3>
+                                    <p>Perlu perawatan/pembersihan</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="history">
+                        <h2><i class="fas fa-landmark icon-section"></i> Sejarah</h2>
+                        <p>Kompor ini merupakan peninggalan dari awal abad ke-20 dan sering digunakan di rumah-rumah tradisional maupun dapur umum pada masa lalu. Keberadaannya menjadi saksi sejarah perkembangan alat masak di Indonesia sebelum teknologi modern masuk secara masif.</p>
+                    </section>
+
+                    <section class="conservation">
+                        <h2><i class="fas fa-shield-alt icon-section"></i> Proses Konservasi</h2>
+                        <p>Kompor ini saat ini dalam kondisi berdebu dan menunjukkan tanda-tanda penuaan material. Perlu dilakukan pembersihan menyeluruh serta perlindungan dari karat untuk menjaga keutuhan koleksi ini di masa mendatang.</p>
+                    </section>
+                </div>
+
+            </article>
+        </div>
+
+        <!-- Koleksi Terkait -->
+<section class="related-collections">
+    <h2 class="section-title"><i class="fas fa-link"></i> Koleksi Terkait</h2>
+    <div class="collection-grid">
+        <!-- Card 1 -->
+        <div class="collection-card">
+            <div class="card-image">
+                <img src="../images/Lincak.jpg" alt="Lincak">
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Lincak</h3>
+                <div class="card-meta">
+                    <span class="card-date">
+                        <i class="fas fa-calendar-alt"></i> 12 Feb 2024
+                    </span>
+                    <span class="card-category">
+                        <i class="fas fa-tag"></i> Peralatan Dapur
+                    </span>
+                </div>
+                <p class="card-description">
+                    Lincak berbahan tembaga ini digunakan untuk merebus air dan memasak di dapur tradisional. Ketel ini memiliki ukiran khas pada bagian badan dan gagangnya yang menunjukkan keahlian pandai besi pada masa itu.
+                </p>
+                <a href="#" class="card-button"><i class="fas fa-info-circle"></i> Lihat Detail</a>
+            </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="collection-card">
+            <div class="card-image">
+                <img src="../images/Dondang.jpg" alt="Dondang">
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Dondang</h3>
+                <div class="card-meta">
+                    <span class="card-date">
+                        <i class="fas fa-calendar-alt"></i> 8 Jan 2024
+                    </span>
+                    <span class="card-category">
+                        <i class="fas fa-tag"></i> Peralatan Pertanian
+                    </span>
+                </div>
+                <p class="card-description">
+                    Alat tradisional untuk menanam padi yang terbuat dari kayu dan besi. Digunakan oleh petani di sawah untuk membuat lubang dan menanam bibit padi dengan lebih efisien dan rapi.
+                </p>
+                <a href="#" class="card-button"><i class="fas fa-info-circle"></i> Lihat Detail</a>
+            </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="collection-card">
+            <div class="card-image">
+                <img src="../images/Brankas.jpg" alt="Brankas" style="background: #fafafa;">
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Brankas</h3>
+                <div class="card-meta">
+                    <span class="card-date">
+                        <i class="fas fa-calendar-alt"></i> 22 Mar 2024
+                    </span>
+                    <span class="card-category">
+                        <i class="fas fa-tag"></i> Peralatan Dapur
+                    </span>
+                </div>
+                <p class="card-description">
+                    Tungku masak tradisional yang terbuat dari tanah liat. Digunakan dengan kayu bakar sebagai sumber panas untuk memasak nasi dan lauk pauk. Tungku ini berasal dari Jawa Barat pada awal abad ke-19.
+                </p>
+                <a href="#" class="card-button"><i class="fas fa-info-circle"></i> Lihat Detail</a>
+            </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="collection-card">
+            <div class="card-image">
+                <img src="../images/Timbangan Surat.jpg" alt="Timbangan Surat">
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Timbangan Surat</h3>
+                <div class="card-meta">
+                    <span class="card-date">
+                        <i class="fas fa-calendar-alt"></i> 5 Apr 2024
+                    </span>
+                    <span class="card-category">
+                        <i class="fas fa-tag"></i> Peralatan Pertanian
+                    </span>
+                </div>
+                <p class="card-description">
+                    Cangkul dengan gagang kayu dan mata besi yang digunakan untuk mengolah tanah. Alat ini merupakan alat pertanian dasar yang penting di masa lalu dan masih digunakan di beberapa daerah pedesaan.
+                </p>
+                <a href="#" class="card-button"><i class="fas fa-info-circle"></i> Lihat Detail</a>
+            </div>
+        </div>
+    </div>
+</section>
+        <!-- Akhir Koleksi Terkait -->
+        
+    </div>
+</main>
+
+<!-- Modal Zoom Gambar -->
+<div id="zoomModal" class="zoom-modal">
+  <span class="close-modal" id="closeZoom">&times;</span>
+  <img class="zoom-modal-content" id="zoomedImg">
+</div>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-column footer-info">
+            <div class="footer-logo">
+                <img src="../images/logo.png" alt="Museum Perkebunan Indonesia">
+                <div>
+                    <h3>Museum Perkebunan Indonesia</h3>
+                    <p class="footer-tagline">"Menghubungkan Masa Lalu dan Masa Depan"</p>
+                </div>
+            </div>
+            
+            <div class="footer-contact">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <p>+62 822-8723-3036</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>info@musperin.id</p>
+                </div>
+            </div>
+            
+            <div class="footer-social">
+                <a href="https://instagram.com/musperin" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/6282287233036" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.facebook.com/musperin" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-column footer-locations">
+            <h4 class="footer-title">Lokasi Kami</h4>
+            <div class="location-item">
+                <div class="location-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                    <strong>Musperin 1</strong>
+                    <p>Jl. Brigjen Katamso, Kp. Baru, Medan Maimun</p>
+                </div>
+            </div>
+            <div class="location-item">
+                <div class="location-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                    <strong>Musperin 2</strong>
+                    <p>Gedung BKSPPS, Jl. Pemuda, Alur, Medan Maimun</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <div class="footer-bottom-inner">
+            <div class="copyright">
+                &copy; 2025 Museum Perkebunan Indonesia. Semua hak dilindungi.
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="../scripts/button_mobile.js"></script>
+<script src="../scripts/page_collection.js"></script>
+
+
+</body>
+</html>

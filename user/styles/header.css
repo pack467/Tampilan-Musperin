@@ -1,0 +1,200 @@
+header {
+    background: linear-gradient(135deg, #3a8e3a, #2e6e2e);
+    color: white;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1000;
+    transition: background 0.5s ease, transform 0.5s ease;
+}
+
+header:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #2e6e2e, #3a8e3a);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
+    transition: transform 0.3s;
+}
+
+.logo:hover {
+    transform: rotate(10deg);
+}
+
+.museum-name {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: #ffffff;
+    text-shadow: none;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.navbar {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.navbar li {
+    margin-left: 30px;
+    position: relative;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: all 0.4s ease;
+    z-index: 0;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.navbar a:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.navbar a:hover {
+    color: white;
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    background-color: transparent;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    background-color: #388e38;
+    top: 100%;
+    left: 0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.navbar li:hover .dropdown {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.dropdown a {
+    display: block;
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 4px;
+}
+
+.dropdown a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateX(5px);
+}
+
+.icon {
+    width: 20px;
+    vertical-align: middle;
+    margin-right: 8px;
+    transition: transform 0.3s;
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.mobile-logo {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    .navbar {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, #3a8e3a, #2e6e2e);
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        z-index: 999;
+    }
+    
+    .navbar.show {
+        display: flex;
+    }
+    
+    .logo-container .museum-name {
+        font-size: 20px;
+    }
+    
+    .logo-container .logo {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .navbar li {
+        margin: 10px 0;
+    }
+    
+    .navbar .dropdown {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+    }
+}

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museum Perkebunan Indonesia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/caraousel.css">
+    <link rel="stylesheet" href="../styles/background.css">
+    <link rel="stylesheet" href="../styles/news.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+</head>
+<body>
+
+<header>
+    <div class="logo-container">
+        <img src="../images/logo.png" alt="Logo" class="logo">
+        <div class="museum-name">Museum Perkebunan Indonesia</div>
+    </div>
+    
+    <!-- Tombol hamburger untuk mobile -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+    </button>
+    
+    <ul class="navbar" id="navbar">
+        <li>
+            <a href="home.html"><i class="fas fa-home icon"></i>Beranda</a>
+        </li>
+        <li>
+            <a href="collection.html"><i class="fas fa-th icon"></i>Koleksi</a>
+        </li>
+        <li>
+            <a href="activity.html"><i class="fas fa-calendar-alt icon"></i>Kegiatan</a>
+        </li>
+        <li>
+            <a href="news.html"><i class="fas fa-newspaper icon"></i>Berita</a>
+        </li>
+        <li>
+            <a href="profile.html"><i class="fas fa-info-circle icon"></i>Profil Kami</a>
+        </li>
+    </ul>
+</header>
+
+<!-- Carousel -->
+<div class="carousel">
+    <div><img src="../images/Banner.jpg" alt="Image 1"></div>
+    <div><img src="../images/Banner.jpg" alt="Image 1"></div>
+</div>
+
+<section class="news-section">
+
+    <div class="search-container">
+        <input type="text" class="search-input" placeholder="Cari berita...">
+        <span class="search-icon">
+            <i class="fas fa-search"></i>
+        </span>
+    </div>
+
+    <div class="section-header">
+        <h1>Berita Terbaru</h1>
+        <p>Ikuti perkembangan terbaru dan kegiatan menarik di Museum Perkebunan Indonesia</p>
+    </div>
+
+    <div class="news-container">
+        <!-- Berita 1 -->
+        <div class="news-card">
+            <div class="news-image">
+                <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Pameran Sejarah Perkebunan">
+                <div class="news-date">15 Jun 2025</div>
+            </div>
+            <div class="news-content">
+                <span class="news-category">Pameran</span>
+                <h3 class="news-title">Pameran Sejarah Perkebunan Indonesia Dibuka untuk Umum</h3>
+                <p class="news-excerpt">Museum Perkebunan Indonesia membuka pameran khusus yang menampilkan sejarah perkembangan perkebunan di Indonesia dari masa kolonial hingga modern.</p>
+                <a href="#" class="news-read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+        
+        <!-- Berita 2 -->
+        <div class="news-card">
+            <div class="news-image">
+                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Workshop Kopi">
+                <div class="news-date">10 Jun 2025</div>
+            </div>
+            <div class="news-content">
+                <span class="news-category">Workshop</span>
+                <h3 class="news-title">Workshop Pengolahan Kopi Tradisional Sukses Digelar</h3>
+                <p class="news-excerpt">Lebih dari 100 peserta mengikuti workshop pengolahan kopi tradisional yang diadakan di Museum Perkebunan Indonesia.</p>
+                <a href="#" class="news-read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+        
+        <!-- Berita 3 -->
+        <div class="news-card">
+            <div class="news-image">
+                <img src="https://images.unsplash.com/photo-1599058917765-a780eda07f3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Kunjungan Siswa">
+                <div class="news-date">5 Jun 2025</div>
+            </div>
+            <div class="news-content">
+                <span class="news-category">Edukasi</span>
+                <h3 class="news-title">Siswa SD Belajar Sejarah Perkebunan di Museum</h3>
+                <p class="news-excerpt">Sebanyak 150 siswa SD mengunjungi museum untuk belajar tentang sejarah perkebunan Indonesia melalui program edukasi interaktif.</p>
+                <a href="#" class="news-read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+        
+        <!-- Berita 4 -->
+        <div class="news-card">
+            <div class="news-image">
+                <img src="https://images.unsplash.com/photo-1595341888016-a392ef81b7de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1479&q=80" alt="Restorasi Artefak">
+                <div class="news-date">1 Jun 2025</div>
+            </div>
+            <div class="news-content">
+                <span class="news-category">Koleksi</span>
+                <h3 class="news-title">Restorasi Artefak Perkebunan Berhasil Diselesaikan</h3>
+                <p class="news-excerpt">Tim restorasi museum berhasil menyelesaikan pemulihan 15 artefak perkebunan bersejarah yang akan dipamerkan bulan depan.</p>
+                <a href="#" class="news-read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+        
+        <!-- Berita 5 -->
+        <div class="news-card">
+            <div class="news-image">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Kerjasama Internasional">
+                <div class="news-date">28 Mei 2025</div>
+            </div>
+            <div class="news-content">
+                <span class="news-category">Kerjasama</span>
+                <h3 class="news-title">Museum Jalin Kerjasama dengan Lembaga Sejarah Belanda</h3>
+                <p class="news-excerpt">Museum Perkebunan Indonesia menandatangani MoU dengan Lembaga Sejarah Belanda untuk pertukaran arsip dan penelitian bersama.</p>
+                <a href="#" class="news-read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+        
+        <!-- Berita 6 -->
+        <div class="news-card">
+            <div class="news-image">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Festival Teh">
+                <div class="news-date">20 Mei 2025</div>
+            </div>
+            <div class="news-content">
+                <span class="news-category">Event</span>
+                <h3 class="news-title">Festival Teh Nusantara Akan Digelar Akhir Bulan Ini</h3>
+                <p class="news-excerpt">Museum akan menjadi tuan rumah Festival Teh Nusantara yang menampilkan berbagai jenis teh dari seluruh Indonesia.</p>
+                <a href="#" class="news-read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Pagination -->
+<div class="pagination-container">
+    <button class="pagination-button prev-next" disabled>
+        <i class="fas fa-chevron-left"></i>
+        <span>Sebelumnya</span>
+    </button>
+    <div class="page-numbers">
+        <button class="pagination-button active">1</button>
+        <button class="pagination-button">2</button>
+        <button class="pagination-button">3</button>
+        <button class="pagination-button">4</button>
+        <button class="pagination-button">5</button>
+        <span class="ellipsis">...</span>
+        <button class="pagination-button">12</button>
+    </div>
+    <button class="pagination-button prev-next">
+        <span>Selanjutnya</span>
+        <i class="fas fa-chevron-right"></i>
+    </button>
+</div>
+</section>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-column footer-info">
+            <div class="footer-logo">
+                <img src="../images/logo.png" alt="Museum Perkebunan Indonesia">
+                <div>
+                    <h3>Museum Perkebunan Indonesia</h3>
+                    <p class="footer-tagline">"Menghubungkan Masa Lalu dan Masa Depan"</p>
+                </div>
+            </div>
+            
+            <div class="footer-contact">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <p>+62 822-8723-3036</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>info@musperin.id</p>
+                </div>
+            </div>
+            
+            <div class="footer-social">
+                <a href="https://instagram.com/musperin" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/6282287233036" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.facebook.com/musperin" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-column footer-locations">
+            <h4 class="footer-title">Lokasi Kami</h4>
+            <div class="location-item">
+                <div class="location-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                    <strong>Musperin 1</strong>
+                    <p>Jl. Brigjen Katamso, Kp. Baru, Medan Maimun</p>
+                </div>
+            </div>
+            <div class="location-item">
+                <div class="location-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                    <strong>Musperin 2</strong>
+                    <p>Gedung BKSPPS, Jl. Pemuda, Alur, Medan Maimun</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <div class="footer-bottom-inner">
+            <div class="copyright">
+                &copy; 2025 Museum Perkebunan Indonesia. Semua hak dilindungi.
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="../scripts/script.js"></script>
+<script src="../scripts/pagination.js"></script>
+<script src="../scripts/button_mobile.js"></script>
+
+</body>
+</html>

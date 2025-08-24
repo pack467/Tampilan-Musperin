@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museum Perkebunan Indonesia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/caraousel.css">
+    <link rel="stylesheet" href="../styles/background.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/profile.css">
+</head>
+<body>
+
+<header>
+    <div class="logo-container">
+        <img src="../images/logo.png" alt="Logo" class="logo">
+        <div class="museum-name">Museum Perkebunan Indonesia</div>
+    </div>
+
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <ul class="navbar" id="navbar">
+        <li>
+            <a href="home.html"><i class="fas fa-home icon"></i>Beranda</a>
+        </li>
+        <li>
+            <a href="collection.html"><i class="fas fa-th icon"></i>Koleksi</a>
+        </li>
+        <li>
+            <a href="activity.html"><i class="fas fa-calendar-alt icon"></i>Kegiatan</a>
+        </li>
+        <li>
+            <a href="news.html"><i class="fas fa-newspaper icon"></i>Berita</a>
+        </li>
+        <li>
+            <a href="profile.html"><i class="fas fa-info-circle icon"></i>Profil Kami</a>
+        </li>
+    </ul>
+</header>
+
+<!-- Carousel -->
+<div class="carousel">
+    <div><img src="../images/Banner.jpg" alt="Image 1"></div>
+    <div><img src="../images/Banner.jpg" alt="Image 1"></div>
+</div>
+
+<!-- Profile Main Content -->
+<main class="profile-container">
+    <!-- Quick Navigation -->
+    <nav class="profile-nav">
+        <ul>
+            <li><a href="#sejarah" class="nav-link active"><i class="fas fa-history"></i> Sejarah</a></li>
+            <li><a href="#visi-misi" class="nav-link"><i class="fas fa-bullseye"></i> Visi Misi</a></li>
+            <li><a href="#struktur" class="nav-link"><i class="fas fa-sitemap"></i> Struktur</a></li>
+            <li><a href="#lokasi" class="nav-link"><i class="fas fa-map-marked-alt"></i> Lokasi</a></li>
+            <li><a href="#prestasi" class="nav-link"><i class="fas fa-trophy"></i> Prestasi</a></li>
+            <li><a href="#mitra" class="nav-link"><i class="fas fa-handshake"></i> Mitra</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sejarah Section -->
+    <section id="sejarah" class="profile-section sejarah">
+        <div class="section-header">
+            <div class="timeline-icon">
+                <i class="fas fa-history"></i>
+            </div>
+            <h2>Sejarah Museum</h2>
+        </div>
+        <div class="content-wrapper">
+            <div class="history-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2010</div>
+                    <div class="timeline-content">
+                        <h3>Ide Pendirian</h3>
+                        <p>Gagasan awal pendirian museum muncul dari para ahli sejarah perkebunan dan praktisi industri.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2014</div>
+                    <div class="timeline-content">
+                        <h3>Pembangunan Gedung</h3>
+                        <p>Pemugaran bangunan bersejarah peninggalan era kolonial dimulai di dua lokasi strategis di Medan.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2016</div>
+                    <div class="timeline-content">
+                        <h3>Peresmian</h3>
+                        <p>Museum resmi dibuka untuk umum dengan koleksi awal 500 artefak sejarah perkebunan.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2020</div>
+                    <div class="timeline-content">
+                        <h3>Ekspansi Digital</h3>
+                        <p>Peluncuran platform digital dan virtual tour untuk memperluas jangkauan edukasi.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="history-gallery">
+                <div class="gallery-item">
+                    <img src="../images/bangunan.jpg" alt="Pembangunan Museum">
+                    <p>Proses pembangunan gedung utama</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="../images/peresmian.jpg" alt="Peresmian">
+                    <p>Momen peresmian museum</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visi Misi Section -->
+    <section id="visi-misi" class="profile-section visi-misi">
+        <div class="section-header">
+            <div class="target-icon">
+                <i class="fas fa-bullseye"></i>
+            </div>
+            <h2>Visi & Misi</h2>
+        </div>
+        <div class="vm-grid">
+            <div class="vm-card visi">
+                <div class="vm-icon"><i class="fas fa-eye"></i></div>
+                <h3>Visi</h3>
+                <p>Menjadi pusat preservasi dan edukasi warisan budaya perkebunan Indonesia yang berkelas dunia pada tahun 2030.</p>
+            </div>
+            <div class="vm-card misi">
+                <div class="vm-icon"><i class="fas fa-list-check"></i></div>
+                <h3>Misi</h3>
+                <ul>
+                    <li><i class="fas fa-check"></i> Melestarikan bukti sejarah perkembangan perkebunan Indonesia</li>
+                    <li><i class="fas fa-check"></i> Menyediakan sarana edukasi tentang budaya perkebunan</li>
+                    <li><i class="fas fa-check"></i> Mengembangkan pusat penelitian sejarah perkebunan</li>
+                    <li><i class="fas fa-check"></i> Mendorong inovasi berbasis warisan budaya perkebunan</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Struktur Organisasi -->
+    <section id="struktur" class="profile-section struktur">
+        <div class="section-header">
+            <div class="org-icon">
+                <i class="fas fa-sitemap"></i>
+            </div>
+            <h2>Struktur Organisasi</h2>
+        </div>
+        <div class="org-chart">
+            <div class="org-level ketua">
+                <div class="org-card">
+                    <div class="org-avatar">
+                        <img src="../images/direktur.jpg" alt="Direktur">
+                    </div>
+                    <h3>Dr. Ahmad Syafii</h3>
+                    <p>Direktur Utama</p>
+                    <div class="org-detail">
+                        <p><i class="fas fa-graduation-cap"></i> PhD Sejarah Ekonomi</p>
+                        <p><i class="fas fa-clock"></i> Bergabung sejak 2015</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="org-level wakil">
+                <div class="org-card">
+                    <div class="org-avatar">
+                        <img src="../images/wakil.jpg" alt="Wakil">
+                    </div>
+                    <h3>Maria Siregar, M.Hum</h3>
+                    <p>Wakil Direktur</p>
+                </div>
+            </div>
+            
+            <div class="org-level divisi">
+                <div class="org-card">
+                    <div class="org-avatar">
+                        <img src="../images/budi.jpg" alt="Budi Santoso">
+                    </div>
+                    <h3>Budi Santoso, S.S</h3>
+                    <p>Kepala Divisi Koleksi</p>
+                </div>
+                <div class="org-card">
+                    <div class="org-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Siti Aminah, M.Pd</h3>
+                    <p>Kepala Divisi Edukasi</p>
+                </div>
+                <div class="org-card">
+                    <div class="org-avatar">
+                        <img src="../images/rudi.jpg" alt="Rudi Hermawan">
+                    </div>
+                    <h3>Rudi Hermawan, ST</h3>
+                    <p>Kepala Divisi Teknis</p>
+                </div>
+            </div>
+            
+            <div class="org-level staf">
+                <div class="org-card">
+                    <div class="org-avatar">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3>Tim Koleksi</h3>
+                    <p>5 Staff</p>
+                </div>
+                <div class="org-card">
+                    <div class="org-avatar">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3>Tim Edukasi</h3>
+                    <p>8 Staff</p>
+                </div>
+                <div class="org-card">
+                    <div class="org-avatar">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3>Tim Teknis</h3>
+                    <p>6 Staff</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lokasi Section -->
+    <section id="lokasi" class="profile-section lokasi">
+        <div class="section-header">
+            <div class="map-icon"><i class="fas fa-map-marked-alt"></i></div>
+            <h2>Lokasi Museum</h2>
+        </div>
+        <div class="lokasi-container">
+            <div class="lokasi-tabs">
+                <button class="tab-btn active" data-tab="musperin1">Musperin 1</button>
+                <button class="tab-btn" data-tab="musperin2">Musperin 2</button>
+            </div>
+            
+            <div class="lokasi-content active" id="musperin1">
+                <div class="lokasi-detail">
+                    <h3><i class="fas fa-university"></i> Musperin 1 - Gedung Utama</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Jl. Brigjen Katamso No. 53, Kp. Baru, Kec. Medan Maimun, Kota Medan, Sumatera Utara 20151</p>
+                    <p><i class="fas fa-clock"></i> Jam Operasional: Selasa-Minggu, 08:00-16:00 WIB</p>
+                    <p><i class="fas fa-phone"></i> Telepon: (061) 4531234</p>
+                    <p><i class="fas fa-info-circle"></i> Fasilitas: Ruang Pamer Utama, Perpustakaan, Auditorium, Kafe Museum</p>
+                    <a href="#" class="direction-btn"><i class="fas fa-directions"></i> Dapatkan Petunjuk Arah</a>
+                </div>
+                <div class="lokasi-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d248.8834125907005!2d98.68917518874265!3d3.556448522145945!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30313049053a852d%3A0xabbdd59e512b1d5a!2sMuseum%20Perkebunan%20Indonesia%20(MUSPERIN-1)!5e0!3m2!1sid!2sid!4v1753561355621!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            
+            <div class="lokasi-content" id="musperin2">
+                <div class="lokasi-detail">
+                    <h3><i class="fas fa-building"></i> Musperin 2 - Galeri Modern</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Gedung BKSPPS Lt. 3, Jl. Pemuda No. 12, Alur, Kec. Medan Maimun, Kota Medan, Sumatera Utara 20221</p>
+                    <p><i class="fas fa-clock"></i> Jam Operasional: Rabu-Minggu, 09:00-17:00 WIB</p>
+                    <p><i class="fas fa-phone"></i> Telepon: (061) 4567890</p>
+                    <p><i class="fas fa-info-circle"></i> Fasilitas: Galeri Interaktif, Ruang Workshop, Toko Souvenir, Ruang Multimedia</p>
+                    <a href="#" class="direction-btn"><i class="fas fa-directions"></i> Dapatkan Petunjuk Arah</a>
+                </div>
+                <div class="lokasi-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248.8758309311707!2d98.68053767411446!3d3.584421351903523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3031317a94519557%3A0x98858f1ea7439af2!2sMuseum%20Perkebunan%20Indonesia%20-%202!5e0!3m2!1sid!2sid!4v1753561396909!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prestasi Section -->
+    <section id="prestasi" class="profile-section">
+        <div class="section-header">
+            <div class="trophy-icon"><i class="fas fa-trophy"></i></div>
+            <h2>Prestasi & Penghargaan</h2>
+        </div>
+        
+        <div class="prestasi-container">
+            <div class="prestasi-timeline">
+                <div class="timeline-line"></div>
+                <div class="prestasi-items">
+                    <!-- Item 1 -->
+                    <div class="prestasi-item">
+                        <div class="prestasi-year">2018</div>
+                        <div class="prestasi-image">
+                            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&w=200" alt="Museum Terbaik">
+                        </div>
+                        <div class="prestasi-content">
+                            <h3>Museum Terbaik Sumatera Utara</h3>
+                            <p>Penghargaan dari Kementerian Pendidikan dan Kebudayaan untuk kategori museum dengan tata kelola terbaik.</p>
+                            <span class="prestasi-badge">
+                                Kategori Tata Kelola
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2 -->
+                    <div class="prestasi-item">
+                        <div class="prestasi-year">2019</div>
+                        <div class="prestasi-image">
+                            <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&w=200" alt="Inovasi Digital">
+                        </div>
+                        <div class="prestasi-content">
+                            <h3>Penghargaan Inovasi Digital</h3>
+                            <p>Untuk pengembangan virtual tour museum yang inovatif dari Kemenparekraf.</p>
+                            <span class="prestasi-badge">
+                                Inovasi Teknologi
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 3 -->
+                    <div class="prestasi-item">
+                        <div class="prestasi-year">2021</div>
+                        <div class="prestasi-image">
+                            <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&w=200" alt="Sertifikasi ISO">
+                        </div>
+                        <div class="prestasi-content">
+                            <h3>Sertifikasi ISO 9001:2015</h3>
+                            <p>Untuk sistem manajemen mutu dalam pengelolaan museum.</p>
+                            <span class="prestasi-badge">
+                                Standar Internasional
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 4 -->
+                    <div class="prestasi-item">
+                        <div class="prestasi-year">2023</div>
+                        <div class="prestasi-image">
+                            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&w=200" alt="Penghargaan Edukasi">
+                        </div>
+                        <div class="prestasi-content">
+                            <h3>Penghargaan Museum Edukasi</h3>
+                            <p>Penghargaan atas kontribusi dalam edukasi sejarah perkebunan di Indonesia.</p>
+                            <span class="prestasi-badge">
+                                Pendidikan Sejarah
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mitra Section -->
+    <section id="mitra" class="profile-section mitra">
+        <div class="section-header">
+            <div class="partner-icon"><i class="fas fa-handshake"></i></div>
+            <h2>Mitra Kami</h2>
+        </div>
+        <div class="mitra-carousel">
+            <div class="mitra-item">
+                <img src="../images/Kemendikbud.png" alt="Kemendikbud">
+                <p>Kementerian Pendidikan dan Kebudayaan</p>
+            </div>
+            <div class="mitra-item">
+                <img src="../images/kemenparekraf.png" alt="Kemenparekraf">
+                <p>Kementerian Pariwisata</p>
+            </div>
+            <div class="mitra-item">
+                <img src="../images/kemenparekraf.png" alt="Kemenparekraf">
+                <p>Kementerian Pariwisata</p>
+            </div>
+            <div class="mitra-item">
+                <img src="../images/unimed.png" alt="Unimed">
+                <p>Universitas Negeri Medan</p>
+            </div>
+            <div class="mitra-item">
+                <img src="../images/asma.png" alt="ASMA">
+                <p>Asosiasi Museum Asia</p>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-column footer-info">
+            <div class="footer-logo">
+                <img src="../images/logo.png" alt="Museum Perkebunan Indonesia">
+                <div>
+                    <h3>Museum Perkebunan Indonesia</h3>
+                    <p class="footer-tagline">"Menghubungkan Masa Lalu dan Masa Depan"</p>
+                </div>
+            </div>
+            
+            <div class="footer-contact">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <p>+62 822-8723-3036</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>info@musperin.id</p>
+                </div>
+            </div>
+            
+            <div class="footer-social">
+                <a href="https://instagram.com/musperin" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/6282287233036" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.facebook.com/musperin" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-column footer-locations">
+            <h4 class="footer-title">Lokasi Kami</h4>
+            <div class="location-item">
+                <div class="location-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                    <strong>Musperin 1</strong>
+                    <p>Jl. Brigjen Katamso, Kp. Baru, Medan Maimun</p>
+                </div>
+            </div>
+            <div class="location-item">
+                <div class="location-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                    <strong>Musperin 2</strong>
+                    <p>Gedung BKSPPS, Jl. Pemuda, Alur, Medan Maimun</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <div class="footer-bottom-inner">
+            <div class="copyright">
+                &copy; 2025 Museum Perkebunan Indonesia. Semua hak dilindungi.
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="../scripts/script.js"></script>
+<script src="../scripts/profile.js"></script>
+<script src="../scripts/button_mobile.js"></script>
+
+</body>
+</html>

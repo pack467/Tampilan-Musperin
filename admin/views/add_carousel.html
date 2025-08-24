@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Admin Panel Musperin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/sidebar.css">
+    <link rel="stylesheet" href="../styles/add_carousel.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+</head>
+
+<body>
+    <div class="sidebar" id="sidebar">
+        <h2>Musperin Admin Panel</h2>
+        <div class="sidebar-menu">
+            <a href="admin_home.html">
+                <i class="fas fa-home icon"></i>
+                <span class="text">Beranda</span>
+            </a>
+            <a href="add_collection.html">
+                <i class="fas fa-book icon"></i>
+                <span class="text">Koleksi</span>
+            </a>
+            <a href="add_news.html">
+                <i class="fas fa-newspaper icon"></i>
+                <span class="text">Berita</span>
+            </a>
+            <a href="add_activity.html">
+                <i class="fas fa-calendar-alt icon"></i>
+                <span class="text">Kegiatan</span>
+            </a>
+            <a href="add_profile.html">
+                <i class="fas fa-info-circle icon"></i>
+                <span class="text">Profile</span>
+            </a>
+            <a href="add_carousel.html" class="active">
+                <i class="fas fa-images icon"></i>
+                <span class="text">Carousel</span>
+            </a>
+            <a href="add_account.html">
+                <i class="fas fa-user-tie icon"></i>
+                <span class="text">Akun</span>
+            </a>
+            <a href="history.html">
+                <i class="fas fa-history icon"></i>
+                <span class="text">Histori</span>
+            </a>
+        </div>
+
+        <button class="logout-button" onclick="logout()">
+            <i class="fas fa-sign-out-alt"></i>
+            <span class="text">Keluar</span>
+        </button>
+
+        <button class="toggle-button" onclick="toggleSidebar()">
+            <i class="fas fa-angle-left" id="toggle-icon"></i>
+        </button>
+    </div>
+
+    <div class="app-container">
+        <!-- HEADER di luar kotak putih -->
+        <div class="header">
+            <h1><i class="fas fa-images"></i> Manajemen Carousel</h1>
+            <div class="desc-soft">
+                Kelola gambar carousel <span class="hilite">halaman website museum</span>.<br>
+                Pastikan hanya <b>gambar terbaik</b> yang tampil.
+            </div>
+        </div>
+
+        <!-- KOTAK PUTIH hanya membungkus info dan upload -->
+        <div class="content-container">
+            <div class="info-box">
+                <div class="info-icon"></div>
+                <div class="info-details">
+                    <div class="info-main">
+                        <b>MAKSIMAL 3 GAMBAR</b>
+                        <span class="info-dot"></span>
+                        <b>RASIO 5:1</b> <span class="hint">(contoh: 1500x300px)</span>
+                        <span class="info-dot"></span>
+                        <b>MAKS SIZE 5MB</b>
+                    </div>
+                    <div class="info-formats">
+                        FORMAT:
+                        <span class="format-list">JPG</span>
+                        <span class="format-list">PNG</span>
+                        <span class="format-list">WEBP</span>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-upload-wrapper">
+                <h2 class="carousel-title"><i class="fas fa-upload"></i> Input Gambar Carousel</h2>
+                <div class="carousel-desc">Unggah gambar untuk carousel halaman website.</div>
+                <div id="carouselFlex"></div>
+                <input type="file" class="file-input" id="carouselInput" accept="image/jpeg,image/png,image/webp">
+
+                <div class="button-group">
+                    <button class="btn btn-cancel">
+                        <i class="fas fa-times"></i> Batal
+                    </button>
+                    <button class="btn btn-save">
+                        <i class="fas fa-save"></i> Simpan
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- END KOTAK PUTIH -->
+
+        <div class="copyright-footer">
+            © 2025 Musperin Admin Panel. All rights reserved.
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../scripts/sidebar.js"></script>
+    <script src="../scripts/add_carousel.js"></script>
+    <script src="../scripts/logout.js"></script>
+</body>
+</html>

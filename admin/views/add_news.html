@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Admin Panel Musperin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/sidebar.css">
+    <link rel="stylesheet" href="../styles/layout.css">
+    <link rel="stylesheet" href="../styles/add_news.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+</head>
+
+<body>
+    <!-- Success Message -->
+    <div id="success-message" class="success-message">
+        <i class="fas fa-check-circle"></i>
+        <span id="success-text"></span>
+    </div>
+
+    <div class="sidebar" id="sidebar">
+        <h2>Musperin Admin Panel</h2>
+        <div class="sidebar-menu">
+            <a href="admin_home.html">
+                <i class="fas fa-home icon"></i>
+                <span class="text">Beranda</span>
+            </a>
+            <a href="add_collection.html">
+                <i class="fas fa-book icon"></i>
+                <span class="text">Koleksi</span>
+            </a>
+            <a href="add_news.html" class="active">
+                <i class="fas fa-newspaper icon"></i>
+                <span class="text">Berita</span>
+            </a>
+            <a href="add_activity.html">
+                <i class="fas fa-calendar-alt icon"></i>
+                <span class="text">Kegiatan</span>
+            </a>
+            <a href="add_profile.html">
+                <i class="fas fa-info-circle icon"></i>
+                <span class="text">Profile</span>
+            </a>
+            <a href="add_carousel.html">
+                <i class="fas fa-images icon"></i>
+                <span class="text">Carousel</span>
+            </a>
+            <a href="add_account.html">
+                <i class="fas fa-user-tie icon"></i>
+                <span class="text">Akun</span>
+            </a>
+            <a href="history.html">
+                <i class="fas fa-history icon"></i>
+                <span class="text">Histori</span>
+            </a>
+        </div>
+
+        <button class="logout-button" onclick="logout()">
+            <i class="fas fa-sign-out-alt"></i>
+            <span class="text">Keluar</span>
+        </button>
+
+        <button class="toggle-button" onclick="toggleSidebar()">
+            <i class="fas fa-angle-left" id="toggle-icon"></i>
+        </button>
+    </div>
+
+    <div class="main-content">
+        <div class="page-header">
+            <h1 class="page-title">
+                <i class="fas fa-newspaper"></i>
+                Kelola Berita
+            </h1>
+        </div>
+
+        <!-- Container untuk switch halaman -->
+        <div class="page-switcher">
+            <button id="view-news-btn" class="switch-btn active">
+                <i class="fas fa-newspaper"></i> Daftar Berita
+            </button>
+            <button id="add-news-btn" class="switch-btn">
+                <i class="fas fa-plus-circle"></i> Tambah Berita
+            </button>
+        </div>
+
+        <!-- Halaman Daftar Berita -->
+        <div id="news-list-page" class="page-content active">
+            <div class="panel">
+                <div class="search-container">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="news-search" placeholder="Cari berita...">
+                    </div>
+                    <button id="refresh-news-btn" class="refresh-btn">
+                        <i class="fas fa-sync-alt"></i> Refresh
+                    </button>
+                </div>
+                
+                <div class="news-list">
+                    <!-- Berita akan dimuat di sini -->
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination-container">
+                    <div class="pagination-info">
+                        Menampilkan <span id="showing-start">1</span>-<span id="showing-end">3</span> dari <span id="total-items">3</span> berita
+                    </div>
+                    <div class="pagination" id="pagination">
+                        <!-- Pagination buttons akan ditambahkan di sini -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Halaman Tambah Berita -->
+        <div id="add-news-page" class="page-content">
+            <div class="panel">
+                <h2 class="section-title">
+                    <i class="fas fa-plus-circle"></i> Form Berita
+                </h2>
+                <form id="news-form">
+                    <div class="form-group">
+                        <label class="form-label" for="news-title">Judul Berita*</label>
+                        <input type="text" class="form-control" id="news-title" placeholder="Masukkan judul berita" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="news-author">Penulis*</label>
+                        <input type="text" class="form-control" id="news-author" placeholder="Nama penulis" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="news-tags">Kategori/Tags*</label>
+                        <div class="tags-input-container">
+                            <input type="text" class="form-control" id="news-tags" placeholder="Contoh: sejarah, kelapa sawit, ekonomi">
+                            <button type="button" id="add-tag-btn" class="add-tag-btn">
+                                <i class="fas fa-plus"></i> Tambah
+                            </button>
+                        </div>
+                        <div class="tags-display" id="tags-display">
+                            <!-- Tags akan ditampilkan di sini -->
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="news-excerpt">Kutipan (jika ada)</label>
+                        <textarea class="form-control" id="news-excerpt" placeholder="Masukkan kutipan penting dari berita"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="news-content">Konten Berita*</label>
+                        <textarea class="form-control" id="news-content" placeholder="Tulis konten berita di sini..." required rows="6"></textarea>
+                    </div>
+                    
+                    <!-- Gambar Container -->
+                    <div class="form-group">
+                        <div class="image-header">
+                            <label class="form-label">Gambar Berita (Maksimal 3)</label>
+                            <button type="button" id="add-image-btn" class="btn add-btn">
+                                <i class="fas fa-plus"></i> Tambah Gambar
+                            </button>
+                        </div>
+                        <div id="image-container">
+                            <!-- Gambar akan ditambahkan secara dinamis -->
+                        </div>
+                    </div>
+                    
+                    <!-- Sub Bab Container -->
+                    <div class="form-group">
+                        <div class="section-header">
+                            <h3 class="section-title">
+                                <i class="fas fa-list"></i> Sub Bab
+                            </h3>
+                            <span class="max-info">Maksimal 2 Sub Bab</span>
+                        </div>
+                        <div id="subsection-container">
+                            <!-- Sub bab akan ditambahkan secara dinamis -->
+                        </div>
+                        <button type="button" id="add-subsection-btn" class="btn add-btn">
+                            <i class="fas fa-plus"></i> Tambah Sub Bab
+                        </button>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" id="cancel-form-btn" class="btn btn-cancel">
+                            <i class="fas fa-times"></i> Batal
+                        </button>
+                        <button type="submit" class="btn btn-save">
+                            <i class="fas fa-save"></i> Simpan Berita
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="copyright-footer">
+            © 2025 Musperin Admin Panel. All rights reserved.
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../scripts/add_news.js"></script>
+    <script src="../scripts/sidebar.js"></script>
+    <script src="../scripts/logout.js"></script>
+</body>
+</html>

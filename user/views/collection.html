@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museum Perkebunan Indonesia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/caraousel.css">
+    <link rel="stylesheet" href="../styles/background.css">
+    <link rel="stylesheet" href="../styles/collection.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+</head>
+<body>
+
+<header>
+    <div class="logo-container">
+        <img src="../images/logo.png" alt="Logo" class="logo">
+        <div class="museum-name">Museum Perkebunan Indonesia</div>
+    </div>
+    
+    <!-- Tombol hamburger untuk mobile -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <ul class="navbar" id="navbar">
+        <li>
+            <a href="home.html"><i class="fas fa-home icon"></i>Beranda</a>
+        </li>
+        <li>
+            <a href="collection.html"><i class="fas fa-th icon"></i>Koleksi</a>
+        </li>
+        <li>
+            <a href="activity.html"><i class="fas fa-calendar-alt icon"></i>Kegiatan</a>
+        </li>
+        <li>
+            <a href="news.html"><i class="fas fa-newspaper icon"></i>Berita</a>
+        </li>
+        <li>
+            <a href="profile.html"><i class="fas fa-info-circle icon"></i>Profil Kami</a>
+        </li>
+    </ul>
+</header>
+
+<div class="carousel">
+    <div><img src="../images/Banner.jpg" alt="Image 1"></div>
+    <div><img src="../images/Banner.jpg" alt="Image 1"></div>
+</div>
+
+<section class="collection-section">
+    <!-- Search Bar -->
+    <div class="search-container">
+        <input type="text" class="search-input" placeholder="Cari koleksi...">
+        <i class="fas fa-search search-icon"></i>
+    </div>
+    
+    <div class="section-header">
+        <h2>Koleksi Museum</h2>
+        <p>Jelajahi kekayaan budaya dan sejarah dalam koleksi kami</p>
+    </div>
+    
+    <div class="collection-container">
+        <div class="collection-grid">
+            <!-- Item Koleksi 1 -->
+            <div class="collection-card">
+                <div class="card-badge">Populer</div>
+                <div class="image-container">
+                    <img src="../images/Dondang.jpg" alt="Alat Tani Kuno" class="collection-image">
+                </div>
+                <div class="collection-details">
+                    <h3 class="collection-name">Alat Tani Tradisional</h3>
+                    <div class="collection-meta">
+                        <span class="collection-date"><i class="far fa-calendar-alt"></i> 15 Maret 2024</span>
+                        <span class="collection-category"><i class="fas fa-tag"></i> Alat Pertanian</span>
+                    </div>
+                    <p class="collection-desc">Alat pertanian tradisional yang digunakan sejak era kolonial dengan material besi tempa.</p>
+                    <button class="cek-button">Lihat Detail Koleksi<i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Item Koleksi 2 -->
+            <div class="collection-card">
+                <div class="card-badge">Baru</div>
+                <div class="image-container">
+                    <img src="../images/Kompor.jpg" alt="Dokumen Sejarah" class="collection-image">
+                </div>
+                <div class="collection-details">
+                    <h3 class="collection-name">Dokumen Sejarah</h3>
+                    <div class="collection-meta">
+                        <span class="collection-date"><i class="far fa-calendar-alt"></i> 10 Februari 2024</span>
+                        <span class="collection-category"><i class="fas fa-tag"></i> Arsip</span>
+                    </div>
+                    <p class="collection-desc">Dokumen asli perkebunan dari tahun 1920-an yang mencatat produksi dan distribusi.</p>
+                    <button class="cek-button">Lihat Detail Koleksi<i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Item Koleksi 3 -->
+            <div class="collection-card">
+                <div class="image-container">
+                    <img src="../images/collection3.jpg" alt="Artefak Tradisional" class="collection-image">
+                </div>
+                <div class="collection-details">
+                    <h3 class="collection-name">Artefak Tradisional</h3>
+                    <div class="collection-meta">
+                        <span class="collection-date"><i class="far fa-calendar-alt"></i> 5 Januari 2024</span>
+                        <span class="collection-category"><i class="fas fa-tag"></i> Budaya</span>
+                    </div>
+                    <p class="collection-desc">Artefak budaya masyarakat perkebunan yang menggambarkan kehidupan sehari-hari.</p>
+                    <button class="cek-button">Lihat Detail Koleksi<i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Item Koleksi 4 -->
+            <div class="collection-card">
+                <div class="image-container">
+                    <img src="../images/collection4.jpg" alt="Foto Sejarah" class="collection-image">
+                </div>
+                <div class="collection-details">
+                    <h3 class="collection-name">Foto Sejarah</h3>
+                    <div class="collection-meta">
+                        <span class="collection-date"><i class="far fa-calendar-alt"></i> 20 Desember 2023</span>
+                        <span class="collection-category"><i class="fas fa-tag"></i> Fotografi</span>
+                    </div>
+                    <p class="collection-desc">Koleksi foto hitam putih yang mendokumentasikan awal mula perkebunan di Indonesia.</p>
+                    <button class="cek-button">Lihat Detail Koleksi<i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="collection-card">
+                <div class="image-container">
+                    <img src="../images/collection4.jpg" alt="Foto Sejarah" class="collection-image">
+                </div>
+                <div class="collection-details">
+                    <h3 class="collection-name">Foto Sejarah</h3>
+                    <div class="collection-meta">
+                        <span class="collection-date"><i class="far fa-calendar-alt"></i> 20 Desember 2023</span>
+                        <span class="collection-category"><i class="fas fa-tag"></i> Fotografi</span>
+                    </div>
+                    <p class="collection-desc">Koleksi foto hitam putih yang mendokumentasikan awal mula perkebunan di Indonesia.</p>
+                    <button class="cek-button">Lihat Detail Koleksi<i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="collection-card">
+                <div class="image-container">
+                    <img src="../images/collection4.jpg" alt="Foto Sejarah" class="collection-image">
+                </div>
+                <div class="collection-details">
+                    <h3 class="collection-name">Foto Sejarah</h3>
+                    <div class="collection-meta">
+                        <span class="collection-date"><i class="far fa-calendar-alt"></i> 20 Desember 2023</span>
+                        <span class="collection-category"><i class="fas fa-tag"></i> Fotografi</span>
+                    </div>
+                    <p class="collection-desc">Koleksi foto hitam putih yang mendokumentasikan awal mula perkebunan di Indonesia. Koleksi foto hitam putih yang mendokumentasikan awal mula perkebunan di Indonesia. Koleksi foto hitam putih yang mendokumentasikan awal mula perkebunan di Indonesia.</p>
+                    <button class="cek-button">Lihat Detail Koleksi<i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="collection-card">
+                <div class="image-container">
+                    <img src="../images/collection4.jpg" alt="Foto Sejarah" class="collection-image">
+                </div>
+                <div class="collection-details">
+                    <h3 class="collection-name">Foto Sejarah</h3>
+                    <div class="collection-meta">
+                        <span class="collection-date"><i class="far fa-calendar-alt"></i> 20 Desember 2023</span>
+                        <span class="collection-category"><i class="fas fa-tag"></i> Fotografi</span>
+                    </div>
+                    <p class="collection-desc">Koleksi foto hitam putih yang mendokumentasikan awal mula perkebunan di Indonesia.</p>
+                    <button class="cek-button">Lihat Detail Koleksi<i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+<div class="pagination-container">
+    <button class="pagination-button prev-next" disabled>
+        <i class="fas fa-chevron-left"></i>
+        <span>Sebelumnya</span>
+    </button>
+    <div class="page-numbers">
+        <button class="pagination-button active">1</button>
+        <button class="pagination-button">2</button>
+        <button class="pagination-button">3</button>
+        <button class="pagination-button">4</button>
+        <button class="pagination-button">5</button>
+        <span class="ellipsis">...</span>
+        <button class="pagination-button">12</button>
+    </div>
+    <button class="pagination-button prev-next">
+        <span>Selanjutnya</span>
+        <i class="fas fa-chevron-right"></i>
+    </button>
+</div>
+</section>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-column footer-info">
+            <div class="footer-logo">
+                <img src="../images/logo.png" alt="Museum Perkebunan Indonesia">
+                <div>
+                    <h3>Museum Perkebunan Indonesia</h3>
+                    <p class="footer-tagline">"Menghubungkan Masa Lalu dan Masa Depan"</p>
+                </div>
+            </div>
+            
+            <div class="footer-contact">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <p>+62 822-8723-3036</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>info@musperin.id</p>
+                </div>
+            </div>
+            
+            <div class="footer-social">
+                <a href="https://instagram.com/musperin" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/6282287233036" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.facebook.com/musperin" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-column footer-locations">
+            <h4 class="footer-title">Lokasi Kami</h4>
+            <div class="location-item">
+                <div class="location-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                    <strong>Musperin 1</strong>
+                    <p>Jl. Brigjen Katamso, Kp. Baru, Medan Maimun</p>
+                </div>
+            </div>
+            <div class="location-item">
+                <div class="location-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                    <strong>Musperin 2</strong>
+                    <p>Gedung BKSPPS, Jl. Pemuda, Alur, Medan Maimun</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <div class="footer-bottom-inner">
+            <div class="copyright">
+                &copy; 2025 Museum Perkebunan Indonesia. Semua hak dilindungi.
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="../scripts/script.js"></script>
+<script src="../scripts/button_mobile.js"></script>
+<script src="../scripts/pagination.js"></script>
+</body>
+</html>

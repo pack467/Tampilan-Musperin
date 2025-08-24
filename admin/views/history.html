@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Admin Panel Musperin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/sidebar.css">
+    <link rel="stylesheet" href="../styles/layout.css">
+    <link rel="stylesheet" href="../styles/history.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+</head>
+
+<body>
+    <div class="sidebar" id="sidebar">
+        <h2>Musperin Admin Panel</h2>
+        <div class="sidebar-menu">
+            <a href="admin_home.html">
+                <i class="fas fa-home icon"></i>
+                <span class="text">Beranda</span>
+            </a>
+            <a href="add_collection.html">
+                <i class="fas fa-book icon"></i>
+                <span class="text">Koleksi</span>
+            </a>
+            <a href="add_news.html">
+                <i class="fas fa-newspaper icon"></i>
+                <span class="text">Berita</span>
+            </a>
+            <a href="add_activity.html">
+                <i class="fas fa-calendar-alt icon"></i>
+                <span class="text">Kegiatan</span>
+            </a>
+            <a href="add_profile.html">
+                <i class="fas fa-info-circle icon"></i>
+                <span class="text">Profile</span>
+            </a>
+            <a href="add_carousel.html">
+                <i class="fas fa-images icon"></i>
+                <span class="text">Carousel</span>
+            </a>
+            <a href="add_account.html">
+                <i class="fas fa-user-tie icon"></i>
+                <span class="text">Akun</span>
+            </a>
+            <a href="history.html" class="active">
+                <i class="fas fa-history icon"></i>
+                <span class="text">Histori</span>
+            </a>
+        </div>
+
+        <button class="logout-button" onclick="logout()">
+            <i class="fas fa-sign-out-alt"></i>
+            <span class="text">Keluar</span>
+        </button>
+
+        <button class="toggle-button" onclick="toggleSidebar()">
+            <i class="fas fa-angle-left" id="toggle-icon"></i>
+        </button>
+    </div>
+
+    <div class="main-content" id="main-content">
+        <div class="content-wrapper">
+            <!-- Header Section - Outside white box -->
+            <div class="page-header">
+                <h1><i class="fas fa-history"></i> History Update</h1>
+                <p>Rekam jejak semua aktivitas update di sistem</p>
+            </div>
+
+            <div class="history-container">
+                <div class="filter-section">
+                    <div class="filter-controls">
+                        <div class="filter-group">
+                            <label for="object-filter"><i class="fas fa-cube"></i> Objek</label>
+                            <select id="object-filter" class="filter-select">
+                                <option value="all">Semua Objek</option>
+                                <option value="Koleksi">Koleksi</option>
+                                <option value="Berita">Berita</option>
+                                <option value="Kegiatan">Kegiatan</option>
+                                <option value="Profile">Profile</option>
+                                <option value="Carousel">Carousel</option>
+                                <option value="Akun">Akun</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label for="action-filter"><i class="fas fa-bolt"></i> Aksi</label>
+                            <select id="action-filter" class="filter-select">
+                                <option value="all">Semua Aksi</option>
+                                <option value="Membuat">Membuat</option>
+                                <option value="Memperbarui">Memperbarui</option>
+                                <option value="Backup">Backup</option>
+                                <option value="Publikasi">Publikasi</option>
+                                <option value="Arsip">Arsip</option>
+                                <option value="Restore">Restore</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label for="user-filter"><i class="fas fa-user"></i> User</label>
+                            <select id="user-filter" class="filter-select">
+                                <option value="all">Semua User</option>
+                                <option value="Admin">Admin</option>
+                                <option value="Editor">Editor</option>
+                                <option value="Staff">Staff</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label for="date-filter"><i class="fas fa-calendar"></i> Tanggal</label>
+                            <input type="date" id="date-filter" class="filter-date">
+                        </div>
+                        
+                        <div class="filter-group">
+                            <button id="reset-filters" class="filter-button">
+                                <i class="fas fa-sync-alt"></i> Reset
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="search-bar">
+                        <input type="text" id="search-input" placeholder="Cari aktivitas...">
+                        <button id="search-button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="history-table-container">
+                    <table class="history-table">
+                        <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>Role</th>
+                                <th>Aksi</th>
+                                <th>Objek</th>
+                                <th>Tanggal</th>
+                            </tr>
+                        </thead>
+                        <tbody id="history-table-body">
+                            <tr data-object="Profile" data-action="Membuat" data-user="Admin" data-date="2025-08-07">
+                                <td style="font-weight: 600; color: #2c3e50;">Dr. Sari Wulandari</td>
+                                <td style="color: #666;">Admin</td>
+                                <td>
+                                    <div class="action-cell action-create">
+                                        <span class="action-icon"><i class="fas fa-plus-circle"></i></span>
+                                        <span>Membuat</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="object-cell">
+                                        <i class="fas fa-info-circle object-icon"></i>
+                                        <span>Profile</span>
+                                    </div>
+                                </td>
+                                <td class="date-cell">7 Agustus 2025, 14:30</td>
+                            </tr>
+                            <tr data-object="Carousel" data-action="Memperbarui" data-user="Editor" data-date="2025-08-06">
+                                <td style="font-weight: 600; color: #2c3e50;">Andi Pratama</td>
+                                <td style="color: #666;">Editor</td>
+                                <td>
+                                    <div class="action-cell action-update">
+                                        <span class="action-icon"><i class="fas fa-edit"></i></span>
+                                        <span>Memperbarui</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="object-cell">
+                                        <i class="fas fa-images object-icon"></i>
+                                        <span>Carousel</span>
+                                    </div>
+                                </td>
+                                <td class="date-cell">6 Agustus 2025, 10:15</td>
+                            </tr>
+                            <tr data-object="Berita" data-action="Publikasi" data-user="Staff" data-date="2025-08-05">
+                                <td style="font-weight: 600; color: #2c3e50;">Maya Sari</td>
+                                <td style="color: #666;">Staff</td>
+                                <td>
+                                    <div class="action-cell action-publish">
+                                        <span class="action-icon"><i class="fas fa-paper-plane"></i></span>
+                                        <span>Publikasi</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="object-cell">
+                                        <i class="fas fa-newspaper object-icon"></i>
+                                        <span>Berita</span>
+                                    </div>
+                                </td>
+                                <td class="date-cell">5 Agustus 2025, 16:45</td>
+                            </tr>
+                            <tr data-object="Kegiatan" data-action="Backup" data-user="Admin" data-date="2025-08-04">
+                                <td style="font-weight: 600; color: #2c3e50;">Rudi Setiawan</td>
+                                <td style="color: #666;">Admin</td>
+                                <td>
+                                    <div class="action-cell action-backup">
+                                        <span class="action-icon"><i class="fas fa-download"></i></span>
+                                        <span>Backup</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="object-cell">
+                                        <i class="fas fa-calendar-alt object-icon"></i>
+                                        <span>Kegiatan</span>
+                                    </div>
+                                </td>
+                                <td class="date-cell">4 Agustus 2025, 09:20</td>
+                            </tr>
+                            <tr data-object="Koleksi" data-action="Arsip" data-user="Editor" data-date="2025-08-03">
+                                <td style="font-weight: 600; color: #2c3e50;">Indah Permata</td>
+                                <td style="color: #666;">Editor</td>
+                                <td>
+                                    <div class="action-cell action-archive">
+                                        <span class="action-icon"><i class="fas fa-archive"></i></span>
+                                        <span>Arsip</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="object-cell">
+                                        <i class="fas fa-book object-icon"></i>
+                                        <span>Koleksi</span>
+                                    </div>
+                                </td>
+                                <td class="date-cell">3 Agustus 2025, 11:30</td>
+                            </tr>
+                            <tr data-object="Akun" data-action="Restore" data-user="Admin" data-date="2025-08-02">
+                                <td style="font-weight: 600; color: #2c3e50;">Bambang Wijaya</td>
+                                <td style="color: #666;">Admin</td>
+                                <td>
+                                    <div class="action-cell action-restore">
+                                        <span class="action-icon"><i class="fas fa-undo"></i></span>
+                                        <span>Restore</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="object-cell">
+                                        <i class="fas fa-user-tie object-icon"></i>
+                                        <span>Akun</span>
+                                    </div>
+                                </td>
+                                <td class="date-cell">2 Agustus 2025, 13:15</td>
+                            </tr>
+                            <tr data-object="Profile" data-action="Memperbarui" data-user="Staff" data-date="2025-08-01">
+                                <td style="font-weight: 600; color: #2c3e50;">Fitri Handayani</td>
+                                <td style="color: #666;">Staff</td>
+                                <td>
+                                    <div class="action-cell action-update">
+                                        <span class="action-icon"><i class="fas fa-edit"></i></span>
+                                        <span>Memperbarui</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="object-cell">
+                                        <i class="fas fa-info-circle object-icon"></i>
+                                        <span>Profile</span>
+                                    </div>
+                                </td>
+                                <td class="date-cell">1 Agustus 2025, 15:00</td>
+                            </tr>
+                            <tr data-object="Carousel" data-action="Backup" data-user="Editor" data-date="2025-07-31">
+                                <td style="font-weight: 600; color: #2c3e50;">Ahmad Rizki</td>
+                                <td style="color: #666;">Editor</td>
+                                <td>
+                                    <div class="action-cell action-backup">
+                                        <span class="action-icon"><i class="fas fa-download"></i></span>
+                                        <span>Backup</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="object-cell">
+                                        <i class="fas fa-images object-icon"></i>
+                                        <span>Carousel</span>
+                                    </div>
+                                </td>
+                                <td class="date-cell">31 Juli 2025, 08:45</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="pagination">
+                    <button id="prev-page" class="pagination-button">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="page-numbers">
+                        <div class="page-number active" data-page="1">1</div>
+                        <div class="page-number" data-page="2">2</div>
+                        <div class="page-number" data-page="3">3</div>
+                    </div>
+                    <button id="next-page" class="pagination-button">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="copyright-footer">
+                © 2025 Musperin Admin Panel. All rights reserved.
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../scripts/history.js"></script>
+    <script src="../scripts/sidebar.js"></script>
+    <script src="../scripts/logout.js"></script>
+</body>
+</html>

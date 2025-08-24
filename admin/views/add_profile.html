@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Admin Panel Musperin - Profil</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/sidebar.css">
+  <link rel="stylesheet" href="../styles/admin_home.css">
+  <link rel="stylesheet" href="../styles/footer.css">
+  <link rel="stylesheet" href="../styles/add_profile.css">
+</head>
+
+<body>
+  <div class="sidebar" id="sidebar">
+    <h2>Musperin Admin Panel</h2>
+    <div class="sidebar-menu">
+      <a href="admin_home.html">
+        <i class="fas fa-home icon"></i>
+        <span class="text">Beranda</span>
+      </a>
+      <a href="add_collection.html">
+        <i class="fas fa-book icon"></i>
+        <span class="text">Koleksi</span>
+      </a>
+      <a href="add_news.html">
+        <i class="fas fa-newspaper icon"></i>
+        <span class="text">Berita</span>
+      </a>
+      <a href="add_activity.html">
+        <i class="fas fa-calendar-alt icon"></i>
+        <span class="text">Kegiatan</span>
+      </a>
+      <a href="add_profile.html" class="active">
+        <i class="fas fa-info-circle icon"></i>
+        <span class="text">Profile</span>
+      </a>
+      <a href="add_carousel.html">
+        <i class="fas fa-images icon"></i>
+        <span class="text">Carousel</span>
+      </a>
+      <a href="add_account.html">
+        <i class="fas fa-user-tie icon"></i>
+        <span class="text">Akun</span>
+      </a>
+      <a href="history.html">
+        <i class="fas fa-history icon"></i>
+        <span class="text">Histori</span>
+      </a>
+    </div>
+
+    <button class="logout-button" onclick="logout()">
+      <i class="fas fa-sign-out-alt"></i>
+      <span class="text">Keluar</span>
+    </button>
+
+    <button class="toggle-button" onclick="toggleSidebar()">
+      <i class="fas fa-angle-left" id="toggle-icon"></i>
+    </button>
+  </div>
+
+  <!-- Bagian utama konten -->
+  <div class="main-content">
+    <!-- Header di luar kotak putih -->
+    <div class="profile-header-outside">
+      <h1><i class="fas fa-info-circle icon"></i>Manajemen Profil Museum</h1>
+      <p>Kelola berbagai informasi profil museum melalui panel admin</p>
+    </div>
+
+    <div class="profile-container">
+      <!-- Tab navigasi -->
+      <div class="tabs">
+        <button class="tab-button active" data-tab="history">
+          <i class="fas fa-history"></i> Sejarah
+        </button>
+        <button class="tab-button" data-tab="vision">
+          <i class="fas fa-eye"></i> Visi & Misi
+        </button>
+        <button class="tab-button" data-tab="structure">
+          <i class="fas fa-sitemap"></i> Struktur Organisasi
+        </button>
+        <button class="tab-button" data-tab="location">
+          <i class="fas fa-map-marker-alt"></i> Lokasi
+        </button>
+        <button class="tab-button" data-tab="achievement">
+          <i class="fas fa-trophy"></i> Prestasi
+        </button>
+        <button class="tab-button" data-tab="partner">
+          <i class="fas fa-handshake"></i> Mitra
+        </button>
+      </div>
+
+      <!-- Konten tab -->
+      <div class="tab-content-container">
+        <!-- Tab Sejarah -->
+        <div id="history" class="tab-content active">
+          <div class="tab-header">
+            <h2><i class="fas fa-history"></i> Sejarah Museum</h2>
+            <div class="tab-actions">
+              <button class="action-button list-button active"><i class="fas fa-list"></i> Daftar Sejarah</button>
+              <button class="action-button add-event-button"><i class="fas fa-plus-circle"></i> Tambah Peristiwa</button>
+              <button class="action-button add-image-button"><i class="fas fa-image"></i> Tambah Gambar</button>
+            </div>
+          </div>
+
+          <!-- Form Input Peristiwa Sejarah -->
+          <div class="form-container event-form hidden">
+            <form id="history-event-form">
+              <div class="form-group">
+                <label for="history-year">Tahun Peristiwa</label>
+                <input type="number" id="history-year" placeholder="Contoh: 2010" min="1900" max="2100" required inputmode="numeric" pattern="[0-9]*" oninput="this.value=this.value.replace(/[^0-9]/g,'');">
+              </div>
+
+              <div class="form-group">
+                <label for="history-title">Judul Peristiwa</label>
+                <input type="text" id="history-title" placeholder="Contoh: Ide Pendirian" required>
+              </div>
+
+              <div class="form-group">
+                <label for="history-description">Deskripsi Peristiwa</label>
+                <textarea id="history-description" placeholder="Deskripsi lengkap peristiwa..." rows="4" required></textarea>
+              </div>
+
+              <div class="form-actions">
+                <button type="button" class="cancel-button"><i class="fas fa-times-circle"></i> Batal</button>
+                <button type="submit" class="save-button"><i class="fas fa-save"></i> Simpan Peristiwa</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Form Input Gambar Sejarah -->
+          <div class="form-container image-form hidden">
+            <form id="history-image-form">
+              <div class="form-group">
+                <label for="history-image">Gambar/Foto Sejarah</label>
+                <input type="file" id="history-image" accept="image/*" required>
+                <div class="image-preview" id="history-image-preview">
+                  <i class="fas fa-image"></i>
+                  <p>Pratinjau gambar akan muncul di sini</p>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="history-caption">Keterangan Gambar</label>
+                <input type="text" id="history-caption" placeholder="Judul atau caption gambar..." required>
+              </div>
+
+              <div class="form-actions">
+                <button type="button" class="cancel-button"><i class="fas fa-times-circle"></i> Batal</button>
+                <button type="submit" class="save-button"><i class="fas fa-save"></i> Simpan Gambar</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Daftar Sejarah -->
+          <div class="list-container">
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Tahun</th>
+                    <th>Judul Peristiwa</th>
+                    <th>Deskripsi</th>
+                    <th>Aksi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>2010</td>
+                    <td>Ide Pendirian</td>
+                    <td>Pertemuan pertama para pendiri museum untuk membahas konsep dasar museum.</td>
+                    <td class="actions">
+                      <button class="edit-button"><i class="fas fa-edit"></i></button>
+                      <button class="delete-button"><i class="fas fa-trash"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2014</td>
+                    <td>Pembangunan</td>
+                    <td>Dimulainya pembangunan gedung utama museum dengan arsitektur modern.</td>
+                    <td class="actions">
+                      <button class="edit-button"><i class="fas fa-edit"></i></button>
+                      <button class="delete-button"><i class="fas fa-trash"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2016</td>
+                    <td>Peresmian</td>
+                    <td>Peresmian museum oleh Menteri Pendidikan dan Kebudayaan.</td>
+                    <td class="actions">
+                      <button class="edit-button"><i class="fas fa-edit"></i></button>
+                      <button class="delete-button"><i class="fas fa-trash"></i></button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Galeri Gambar Sejarah -->
+            <div class="history-gallery">
+              <h3>Galeri Foto Sejarah</h3>
+              <div class="gallery-grid" id="history-gallery-grid">
+                <div class="gallery-item">
+                  <div class="gallery-image">
+                    <img src="https://via.placeholder.com/300x200?text=Ide+Pendirian+2010" alt="Ide Pendirian Museum - 2010">
+                  </div>
+                  <div class="gallery-caption">Ide Pendirian Museum - 2010</div>
+                </div>
+                <div class="gallery-item">
+                  <div class="gallery-image">
+                    <img src="https://via.placeholder.com/300x200?text=Pembangunan+2014" alt="Pembangunan Museum - 2014">
+                  </div>
+                  <div class="gallery-caption">Pembangunan Museum - 2014</div>
+                </div>
+                <div class="gallery-item">
+                  <div class="gallery-image">
+                    <img src="https://via.placeholder.com/300x200?text=Peresmian+2016" alt="Peresmian Museum - 2016">
+                  </div>
+                  <div class="gallery-caption">Peresmian Museum - 2016</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab Visi & Misi -->
+        <div id="vision" class="tab-content">
+          <div class="tab-header">
+            <h2><i class="fas fa-eye"></i> Visi & Misi Museum</h2>
+            <div class="tab-actions">
+              <button class="action-button list-button active"><i class="fas fa-list"></i> Lihat Visi Misi</button>
+              <button class="action-button add-button"><i class="fas fa-pen-to-square"></i> Edit Visi Misi</button>
+            </div>
+          </div>
+
+          <!-- Form Input Visi Misi -->
+          <div class="form-container hidden">
+            <form id="vision-form">
+              <div class="form-group">
+                <label for="vision-text">Visi Museum</label>
+                <textarea id="vision-text" placeholder="Masukkan visi museum..." rows="3" required>Menjadi museum pendidikan terdepan di Indonesia yang menginspirasi generasi muda melalui sejarah dan inovasi.</textarea>
+              </div>
+
+              <div class="form-group">
+                <label>Misi Museum</label>
+                <div class="mission-list">
+                  <div class="mission-item">
+                    <input type="text" placeholder="Misi 1" value="Menyediakan sarana edukasi sejarah yang modern dan interaktif">
+                    <button type="button" class="remove-mission"><i class="fas fa-times"></i></button>
+                  </div>
+                  <div class="mission-item">
+                    <input type="text" placeholder="Misi 2" value="Melestarikan warisan budaya dan sejarah bangsa Indonesia">
+                    <button type="button" class="remove-mission"><i class="fas fa-times"></i></button>
+                  </div>
+                  <div class="mission-item">
+                    <input type="text" placeholder="Misi 3" value="Mengembangkan program pendidikan berbasis teknologi untuk generasi muda">
+                    <button type="button" class="remove-mission"><i class="fas fa-times"></i></button>
+                  </div>
+                </div>
+                <button type="button" class="add-mission-button">
+                  <i class="fas fa-plus"></i> Tambah Misi
+                </button>
+              </div>
+
+              <div class="form-actions">
+                <button type="button" class="cancel-button"><i class="fas fa-times-circle"></i> Batal</button>
+                <button type="submit" class="save-button"><i class="fas fa-save"></i> Simpan Visi & Misi</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Tampilan Visi Misi -->
+          <div class="list-container">
+            <div class="vision-container">
+              <div class="vision-card">
+                <h3>Visi Museum</h3>
+                <p>Menjadi museum pendidikan terdepan di Indonesia yang menginspirasi generasi muda melalui sejarah dan inovasi.</p>
+              </div>
+              <div class="mission-card">
+                <h3>Misi Museum</h3>
+                <ul>
+                  <li>Menyediakan sarana edukasi sejarah yang modern dan interaktif</li>
+                  <li>Melestarikan warisan budaya dan sejarah bangsa Indonesia</li>
+                  <li>Mengembangkan program pendidikan berbasis teknologi untuk generasi muda</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab Struktur Organisasi -->
+        <div id="structure" class="tab-content">
+          <div class="tab-header">
+            <h2><i class="fas fa-sitemap"></i> Struktur Organisasi</h2>
+            <div class="tab-actions">
+              <button class="action-button list-button active"><i class="fas fa-list"></i> Daftar Staf</button>
+              <button class="action-button add-member-button"><i class="fas fa-user-plus"></i> Tambah Anggota</button>
+              <button class="action-button add-staff-button"><i class="fas fa-users"></i> Tambah Staff</button>
+            </div>
+          </div>
+
+          <!-- FORM ANGGOTA: hanya data pribadi (nama s/d detail) -->
+          <div class="form-container hidden" id="member-form-container">
+            <form id="member-form">
+              <div class="form-group">
+                <label for="staff-name">Nama Lengkap</label>
+                <input type="text" id="staff-name" placeholder="Contoh: Dr. Ahmad Syafii" required>
+              </div>
+
+              <div class="form-group">
+                <label for="staff-position">Jabatan</label>
+                <input type="text" id="staff-position" placeholder="Contoh: Direktur Utama" required>
+              </div>
+
+              <div class="form-group">
+                <label for="staff-rank">Kedudukan (angka)</label>
+                <input type="number" id="staff-rank" placeholder="Contoh: 1" inputmode="numeric" pattern="[0-9]*" min="1" step="1" required oninput="this.value=this.value.replace(/[^0-9]/g,'');">
+              </div>
+
+              <div class="form-group">
+                <label for="staff-photo">Foto Profil</label>
+                <input type="file" id="staff-photo" accept="image/*">
+                <div class="image-preview" id="staff-photo-preview">
+                  <i class="fas fa-image"></i>
+                  <p>Pratinjau foto akan muncul di sini</p>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="staff-details">Detail Tambahan</label>
+                <textarea id="staff-details" placeholder="Pendidikan, tahun bergabung, dll..." rows="3"></textarea>
+              </div>
+
+              <div class="form-actions">
+                <button type="button" class="cancel-button"><i class="fas fa-times-circle"></i> Batal</button>
+                <button type="submit" class="save-button"><i class="fas fa-save"></i> Simpan Anggota</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- FORM STAFF: pindahkan 'Divisi & Jumlah Staf' ke sini -->
+          <div class="form-container hidden" id="staff-form-container">
+            <form id="staff-form">
+              <div class="form-group">
+                <label for="staff-division">Divisi & Jumlah Staf</label>
+                <div class="division-input">
+                  <input type="text" id="division-name" placeholder="Nama Divisi" required>
+                  <!-- Wajib angka -->
+                  <input type="number" id="division-staff" placeholder="Jumlah Staf" min="0" step="1" required inputmode="numeric" pattern="[0-9]*" title="Masukkan angka bulat (0-9)" oninput="this.value=this.value.replace(/[^0-9]/g,'');">
+                  <button type="button" id="add-division"><i class="fas fa-plus"></i><span>&nbsp;Tambah</span></button>
+                </div>
+
+                <div class="division-list">
+                  <div class="division-item">
+                    <span>Tim Koleksi - 5 staff</span>
+                    <button type="button" class="remove-division"><i class="fas fa-times"></i></button>
+                  </div>
+                  <div class="division-item">
+                    <span>Tim Edukasi - 8 staff</span>
+                    <button type="button" class="remove-division"><i class="fas fa-times"></i></button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="button" class="cancel-button"><i class="fas fa-times-circle"></i> Batal</button>
+                <button type="submit" class="save-button"><i class="fas fa-save"></i> Simpan Staff</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Daftar Struktur -->
+          <div class="list-container">
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Foto</th>
+                    <th>Nama</th>
+                    <th>Jabatan</th>
+                    <th>Kedudukan</th>
+                    <th>Detail</th>
+                    <th>Aksi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="avatar"><img src="https://via.placeholder.com/50?text=AS" alt="Dr. Ahmad Syafii"></div>
+                    </td>
+                    <td>Dr. Ahmad Syafii</td>
+                    <td>Direktur Utama</td>
+                    <td>ke 1</td>
+                    <td>S3 Pendidikan Sejarah, bergabung 2015</td>
+                    <td class="actions">
+                      <button class="edit-button"><i class="fas fa-edit"></i></button>
+                      <button class="delete-button"><i class="fas fa-trash"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="avatar"><img src="https://via.placeholder.com/50?text=DS" alt="Dewi Sartika"></div>
+                    </td>
+                    <td>Dewi Sartika, M.Pd</td>
+                    <td>Wakil Direktur</td>
+                    <td>ke 2</td>
+                    <td>S2 Manajemen Pendidikan, bergabung 2017</td>
+                    <td class="actions">
+                      <button class="edit-button"><i class="fas fa-edit"></i></button>
+                      <button class="delete-button"><i class="fas fa-trash"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="avatar"><img src="https://via.placeholder.com/50?text=BS" alt="Budi Santoso"></div>
+                    </td>
+                    <td>Budi Santoso, S.Sos</td>
+                    <td>Kepala Divisi Koleksi</td>
+                    <td>ke 3</td>
+                    <td>S1 Sejarah, bergabung 2016</td>
+                    <td class="actions">
+                      <button class="edit-button"><i class="fas fa-edit"></i></button>
+                      <button class="delete-button"><i class="fas fa-trash"></i></button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="division-summary">
+              <h3>Jumlah Staf per Divisi</h3>
+              <ul>
+                <li>Tim Koleksi - 5 staff</li>
+                <li>Tim Edukasi - 8 staff</li>
+                <li>Tim Administrasi - 3 staff</li>
+                <li>Tim Teknologi - 4 staff</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab Lokasi -->
+        <div id="location" class="tab-content">
+          <div class="tab-header">
+            <h2><i class="fas fa-map-marker-alt"></i> Lokasi Museum</h2>
+            <div class="tab-actions">
+              <button class="action-button list-button active"><i class="fas fa-list"></i> Daftar Lokasi</button>
+              <button class="action-button add-button"><i class="fas fa-plus-circle"></i> Tambah Lokasi</button>
+            </div>
+          </div>
+
+          <!-- Form Input Lokasi -->
+          <div class="form-container hidden">
+            <form id="location-form">
+              <div class="form-group">
+                <label for="location-name">Nama Lokasi</label>
+                <input type="text" id="location-name" placeholder="Contoh: Musperin 1" required>
+              </div>
+
+              <div class="form-group">
+                <label for="location-address">Alamat Lengkap</label>
+                <textarea id="location-address" placeholder="Alamat lengkap lokasi museum..." rows="3" required></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="location-hours">Jam Operasional</label>
+                <input type="text" id="location-hours" placeholder="Contoh: 08:00 - 17:00 (Senin-Minggu)" required>
+              </div>
+
+              <div class="form-group">
+                <label for="location-phone">Nomor Telepon</label>
+                <input type="tel" id="location-phone" placeholder="Contoh: (061) 1234567">
+              </div>
+
+              <div class="form-group">
+                <label>Fasilitas</label>
+                <div class="facility-list">
+                  <div class="facility-item">
+                    <input type="text" placeholder="Fasilitas" value="Perpustakaan">
+                    <button type="button" class="remove-facility"><i class="fas fa-times"></i></button>
+                  </div>
+                  <div class="facility-item">
+                    <input type="text" placeholder="Fasilitas" value="Galeri Interaktif">
+                    <button type="button" class="remove-facility"><i class="fas fa-times"></i></button>
+                  </div>
+                </div>
+                <button type="button" class="add-facility-button">
+                  <i class="fas fa-plus"></i> Tambah Fasilitas
+                </button>
+              </div>
+
+              <div class="form-group">
+                <label for="location-map">Link Peta/Embed Google Maps</label>
+                <input type="text" id="location-map" placeholder="Link Google Maps atau kode embed">
+              </div>
+
+              <div class="form-actions">
+                <button type="button" class="cancel-button"><i class="fas fa-times-circle"></i> Batal</button>
+                <button type="submit" class="save-button"><i class="fas fa-save"></i> Simpan Lokasi</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Daftar Lokasi -->
+          <div class="list-container">
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Nama Lokasi</th>
+                    <th>Alamat</th>
+                    <th>Jam Operasional</th>
+                    <th>Telepon</th>
+                    <th>Aksi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Musperin 1</td>
+                    <td>Jl. Pendidikan No. 123, Medan</td>
+                    <td>08:00-17:00 (Senin-Minggu)</td>
+                    <td>(061) 1234567</td>
+                    <td class="actions">
+                      <button class="edit-button"><i class="fas fa-edit"></i></button>
+                      <button class="delete-button"><i class="fas fa-trash"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Musperin 2</td>
+                    <td>Jl. Sejarah No. 45, Medan</td>
+                    <td>09:00-16:00 (Selasa-Minggu)</td>
+                    <td>(061) 7654321</td>
+                    <td class="actions">
+                      <button class="edit-button"><i class="fas fa-edit"></i></button>
+                      <button class="delete-button"><i class="fas fa-trash"></i></button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="location-details">
+              <div class="location-card">
+                <h3>Musperin 1</h3>
+                <p><strong>Alamat:</strong> Jl. Pendidikan No. 123, Medan</p>
+                <p><strong>Jam Operasional:</strong> 08:00-17:00 (Senin-Minggu)</p>
+                <p><strong>Telepon:</strong> (061) 1234567</p>
+                <p><strong>Fasilitas:</strong> Perpustakaan, Galeri Interaktif, Toko Souvenir, Kafetaria</p>
+                <div class="map-preview">
+                  <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <p>Pratinjau Peta</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab Prestasi -->
+        <div id="achievement" class="tab-content">
+          <div class="tab-header">
+            <h2><i class="fas fa-trophy"></i> Prestasi & Penghargaan</h2>
+            <div class="tab-actions">
+              <button class="action-button list-button active"><i class="fas fa-list"></i> Daftar Prestasi</button>
+              <button class="action-button add-button"><i class="fas fa-plus-circle"></i> Tambah Prestasi</button>
+            </div>
+          </div>
+
+          <!-- Form Input Prestasi -->
+          <div class="form-container hidden">
+            <form id="achievement-form">
+              <div class="form-group">
+                <label for="achievement-year">Tahun Penghargaan</label>
+                <input type="number" id="achievement-year" placeholder="Contoh: 2020" min="1900" max="2100" required inputmode="numeric" pattern="[0-9]*" oninput="this.value=this.value.replace(/[^0-9]/g,'');">
+              </div>
+
+              <div class="form-group">
+                <label for="achievement-title">Judul Penghargaan</label>
+                <input type="text" id="achievement-title" placeholder="Contoh: Museum Terbaik Sumatera Utara" required>
+              </div>
+
+              <div class="form-group">
+                <label for="achievement-description">Deskripsi Singkat</label>
+                <textarea id="achievement-description" placeholder="Deskripsi penghargaan..." rows="3" required></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="achievement-image">Gambar/Foto Penghargaan</label>
+                <input type="file" id="achievement-image" accept="image/*">
+                <div class="image-preview" id="achievement-image-preview">
+                  <i class="fas fa-image"></i>
+                  <p>Pratinjau gambar akan muncul di sini</p>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="achievement-category">Kategori/Badge</label>
+                <div class="category-input-container">
+                  <input type="text" id="achievement-category" list="category-datalist" placeholder="Ketik atau pilih kategori" required>
+                  <datalist id="category-datalist">
+                    <option value="Tata Kelola">
+                    <option value="Inovasi Teknologi">
+                    <option value="ISO">
+                    <option value="Pendidikan">
+                    <option value="Pelayanan">
+                  </datalist>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="button" class="cancel-button"><i class="fas fa-times-circle"></i> Batal</button>
+                <button type="submit" class="save-button"><i class="fas fa-save"></i> Simpan Prestasi</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Daftar Prestasi -->
+          <div class="list-container">
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Tahun</th>
+                    <th>Penghargaan</th>
+                    <th>Kategori</th>
+                    <th>Deskripsi</th>
+                    <th>Aksi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>2020</td>
+                    <td>Museum Terbaik Sumatera Utara</td>
+                    <td><span class="badge">Pendidikan</span></td>
+                    <td>Penghargaan untuk program pendidikan terbaik</td>
+                    <td class="actions">
+                      <button class="edit-button"><i class="fas fa-edit"></i></button>
+                      <button class="delete-button"><i class="fas fa-trash"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2019</td>
+                    <td>Sertifikasi ISO 9001:2015</td>
+                    <td><span class="badge">ISO</span></td>
+                    <td>Sertifikasi manajemen mutu internasional</td>
+                    <td class="actions">
+                      <button class="edit-button"><i class="fas fa-edit"></i></button>
+                      <button class="delete-button"><i class="fas fa-trash"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2018</td>
+                    <td>Inovasi Teknologi Museum</td>
+                    <td><span class="badge">Inovasi Teknologi</span></td>
+                    <td>Untuk aplikasi AR pemandu museum</td>
+                    <td class="actions">
+                      <button class="edit-button"><i class="fas fa-edit"></i></button>
+                      <button class="delete-button"><i class="fas fa-trash"></i></button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab Mitra -->
+        <div id="partner" class="tab-content">
+          <div class="tab-header">
+            <h2><i class="fas fa-handshake"></i> Mitra Museum</h2>
+            <div class="tab-actions">
+              <button class="action-button list-button active"><i class="fas fa-list"></i> Daftar Mitra</button>
+              <button class="action-button add-button"><i class="fas fa-plus-circle"></i> Tambah Mitra</button>
+            </div>
+          </div>
+
+          <!-- Form Input Mitra -->
+          <div class="form-container hidden">
+            <form id="partner-form">
+              <div class="form-group">
+                <label for="partner-logo">Logo Mitra</label>
+                <input type="file" id="partner-logo" accept="image/*">
+                <div class="image-preview" id="partner-logo-preview">
+                  <i class="fas fa-image"></i>
+                  <p>Pratinjau logo akan muncul di sini</p>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="partner-name">Nama Instansi/Mitra</label>
+                <input type="text" id="partner-name" placeholder="Contoh: Kemendikbud" required>
+              </div>
+
+              <div class="form-actions">
+                <button type="button" class="cancel-button"><i class="fas fa-times-circle"></i> Batal</button>
+                <button type="submit" class="save-button"><i class="fas fa-save"></i> Simpan Mitra</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Daftar Mitra -->
+          <div class="list-container">
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Logo</th>
+                    <th>Nama Mitra</th>
+                    <th>Aksi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="logo-preview"><img src="https://via.placeholder.com/50?text=Kemdikbud" alt="Kemendikbud"></div>
+                    </td>
+                    <td>Kemendikbud</td>
+                    <td class="actions">
+                      <button class="edit-button"><i class="fas fa-edit"></i></button>
+                      <button class="delete-button"><i class="fas fa-trash"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="logo-preview"><img src="https://via.placeholder.com/50?text=Unimed" alt="Unimed"></div>
+                    </td>
+                    <td>Unimed</td>
+                    <td class="actions">
+                      <button class="edit-button"><i class="fas fa-edit"></i></button>
+                      <button class="delete-button"><i class="fas fa-trash"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="logo-preview"><img src="https://via.placeholder.com/50?text=ASMA" alt="ASMA"></div>
+                    </td>
+                    <td>ASMA</td>
+                    <td class="actions">
+                      <button class="edit-button"><i class="fas fa-edit"></i></button>
+                      <button class="delete-button"><i class="fas fa-trash"></i></button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright-footer">
+      © 2025 Musperin Admin Panel. All rights reserved.
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../scripts/sidebar.js"></script>
+  <script src="../scripts/logout.js"></script>
+  <script src="../scripts/add_profile.js"></script>
+</body>
+
+</html>

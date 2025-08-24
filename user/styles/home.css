@@ -1,0 +1,640 @@
+/* Konten Utama */
+.custom-content {
+    font-family: 'Poppins', Arial, sans-serif;
+    text-align: center;
+    margin: 38px auto 45px;
+    padding: 20px 20px 25px;
+    background: #3a8e3ad3; /* solid hijau tua branding */
+    border-radius: 22px;
+    max-width: 700px;
+    width: 96%;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    border: none;
+    box-shadow: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.museum-buildings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;             /* kecilkan gap dari 28px ke 18px */
+    margin-bottom: 17px;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 320px;      /* tambahkan ini, biar gambar tetap center */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.building {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.building-img {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: none;
+    border: 3px solid #fff;
+    background: #eaf4e6;
+    transition: transform 0.22s;
+}
+.building-img:hover {
+    transform: scale(1.06) rotate(-2deg);
+}
+.building-label {
+    margin-top: 8px;
+    background: #4abb63;
+    color: #fff;
+    font-size: 14.5px;
+    font-weight: 600;
+    padding: 4px 19px;
+    border-radius: 14px;
+    letter-spacing: 0.6px;
+    box-shadow: none;
+    border: none;
+}
+
+.museum-welcome {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 26px;
+    font-weight: 1200;
+    margin-bottom: 11px;
+    color: #fff;
+    letter-spacing: 0.1px;
+    line-height: 1.33;
+    text-shadow: none;
+}
+
+.museum-welcome span {
+    color: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    letter-spacing: inherit;
+}
+
+.museum-times {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+}
+.time-card {
+    background: #4abb63;
+    border: none;
+    border-radius: 14px;
+    padding: 10px 28px 11px;
+    margin: 3px 0;
+    min-width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    box-shadow: none;
+    transition: none;
+}
+.time-card:hover {
+    background: #2b8d4a;
+}
+.tc-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 2.5px;
+}
+.tc-icon {
+    color: #fff;
+    font-size: 18.5px;
+    filter: none;
+}
+.gedung-name {
+    font-weight: 700;
+    color: #fff;
+    font-size: 16px;
+    font-family: 'Poppins', Arial, sans-serif;
+    letter-spacing: 0.17px;
+    text-shadow: none;
+}
+.jam-buka {
+    color: #fff;
+    font-size: 13.7px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-family: 'Poppins', Arial, sans-serif;
+    margin-top: 2px;
+    text-shadow: none;
+}
+.jam-buka i {
+    color: #fff;
+    font-size: 15px;
+}
+
+@keyframes fadeInUpSmooth {
+  0% {
+    opacity: 0;
+    transform: translateY(60px) scale(0.96);
+    filter: blur(10px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-8px) scale(1.01);
+    filter: blur(0.5px);
+  }
+  80% {
+    transform: translateY(3px) scale(0.99);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.custom-content {
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.custom-content.fade-in-up {
+  animation: fadeInUpSmooth 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+  opacity: 1 !important;
+}
+
+/* Informasi Terbaru */
+.info-section {
+    text-align: center;
+    margin: 40px auto;
+    max-width: 1200px;
+    width: 90%;
+    position: relative; /* Posisi tetap */
+    z-index: 1; /* Info Terbaru di atas carousel */
+    will-change: transform; /* Optimasi performa */
+}
+
+.info-section h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #2e6e2e;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: inline-block;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.info-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: #3a8e3a;
+    border-radius: 2px;
+}
+
+/* Informasi Terbaru - Card Style */
+.news-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 40px auto;
+    max-width: 1200px;
+    width: 90%;
+}
+
+.news-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 1;
+    will-change: transform;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.news-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(58, 142, 58, 0.2);
+}
+
+.news-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.news-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.news-card:hover .news-image img {
+    transform: scale(1.05);
+}
+
+.news-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #3a8e3a;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.news-content {
+    padding: 25px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-content h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #2e6e2e;
+    line-height: 1.4;
+}
+
+.news-content p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+.news-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.news-meta span {
+    color: #777;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.news-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #3a8e3a;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.news-button:hover {
+    background: #2e6e2e;
+    gap: 12px;
+}
+
+/* Animasi untuk card */
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.news-card {
+    animation: cardAppear 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.news-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.news-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.news-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+/* Tentang Kami */
+.about-section {
+    margin: 40px auto;
+    padding: 40px 20px;
+    background: rgba(235, 233, 233, 0.829);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1; /* About Section di atas carousel */
+    will-change: transform; /* Optimasi performa */
+}
+
+.about-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(90deg, #3a8e3a, #2e6e2e);
+}
+
+.about-section h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #2e6e2e;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.about-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: #3a8e3a;
+    border-radius: 2px;
+}
+
+.about-section p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #333;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.about-section .highlight {
+    color: #3a8e3a;
+    font-weight: bold;
+}
+
+/* Responsif untuk Mobile */
+
+@media (max-width: 768px) {
+    .news-container {
+        grid-template-columns: 1fr;
+    }
+    .news-meta {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        width: 100%;
+    }
+    .news-button {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        white-space: nowrap;
+        box-sizing: border-box;
+        font-size: 15px;
+    }
+
+  .news-container {
+    display: block !important;
+    gap: 0 !important;
+    overflow-x: unset !important;
+    padding-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100vw !important;
+    width: 100% !important;
+  }
+  .news-card {
+    min-width: 85vw !important;
+    max-width: 93vw !important;
+    margin: 0 6px;
+    margin-right: 15px !important; /* jarak antar card */
+    /* margin kiri buat card pertama supaya tidak mepet ke kiri */
+    margin-left: 7px !important;
+  }
+
+
+  .news-container.slick-initialized {
+    cursor: grab;
+}
+
+/* Ketika aktif drag (user menahan mouse/touch): grabbing */
+.news-container.slick-initialized.slick-drag {
+    cursor: grabbing;
+}
+
+  .about-section {
+    padding: 18px 6px 15px 6px !important;
+    border-radius: 10px;
+    max-width: 99vw;
+    margin: 22px auto 17px auto;
+  }
+
+
+
+  .about-section h2 {
+    font-size: 19px !important;
+    margin-bottom: 20px !important; /* Ini yang atur jarak ke bawah */
+    position: relative;
+}
+
+.about-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: #3a8e3a;
+    border-radius: 2px;
+    /* Hapus display: block dan margin-bottom di sini! */
+}
+  
+  .about-section p {
+    font-size: 13px !important;
+    line-height: 1.45 !important;
+    text-align: center !important;
+  }
+  .about-section .highlight { font-size: 13px; }
+
+  .about-section strong {
+    display: block;
+    text-align: center !important;
+    margin-top: 10px;
+    margin-bottom: 4px;
+  }
+  .about-section br { display: none; } /* Opsional agar tidak kepanjangan */
+
+    .news-container {
+      display: block; /* atau bisa dihapus (Slick akan set inline style sendiri) */
+      grid-template-columns: none;
+      gap: 0;
+      margin: 20px auto 10px;
+      max-width: 100vw !important;
+      width: 100% !important;
+      padding: 0;
+  }
+  .news-card {
+      min-width: 260px !important;
+      max-width: 270px !important;
+      margin: 0;
+      box-sizing: border-box;
+      opacity: 1 !important;
+      animation: none !important;
+      scroll-snap-align: start;
+  }
+
+  .news-image { height: 125px !important; }
+  .news-content { padding: 12px 14px 10px 14px !important; }
+  .news-content h3 { font-size: 16px !important; margin-bottom: 7px; }
+  .news-content p { font-size: 13px !important; margin-bottom: 10px; }
+  .news-badge { top: 8px; right: 8px; font-size: 11px; padding: 3px 8px; }
+  .news-meta span { font-size: 12px; }
+  .news-button { font-size: 12.5px; padding: 6px 11px; }
+  
+  .custom-content {
+    padding: 17px 5px 13px;
+    border-radius: 14px;
+    max-width: 85vw;
+    margin: 20px auto 18px;
+  }
+
+  .museum-buildings {
+    gap: 10px;
+    margin-bottom: 10px;
+    max-width: 210px;
+    gap: 8px;
+  }
+  
+  .building-img {
+    width: 46px;
+    height: 46px;
+    border-width: 2px;
+  }
+  .building-label {
+    font-size: 11px;
+    padding: 2px 7px;
+    border-radius: 8px;
+    margin-top: 4px;
+  }
+  .museum-welcome {
+    font-size: 13.5px;
+    margin-bottom: 9px;
+    line-height: 1.18;
+  }
+  .museum-welcome span {
+    font-size: 12.5px;
+  }
+
+  .museum-times {
+    gap: 5px;
+    margin-top: 6px;
+    align-items: center;
+  }
+  .time-card {
+    padding: 5px 7px;
+    min-width: 99px;
+    font-size: 12px;
+    border-radius: 8px;
+    margin: 2px 0;
+  }
+  .gedung-name {
+    font-size: 13px;
+  }
+  .jam-buka {
+    font-size: 11.7px;
+    gap: 3px;
+    margin-top: 1px;
+  }
+  .tc-header {
+    gap: 6px;
+    font-size: 12px;
+  }
+  .tc-icon {
+    font-size: 13px;
+  }
+
+    .news-card:last-child {
+    margin-right: 7px !important;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+    .museum-buildings { gap: 13px; }
+    .building-img { width: 56px; height: 56px; }
+    .building-label { font-size: 12.3px; padding: 3px 10px; }
+    .museum-welcome { font-size: 15px; }
+    .museum-welcome span { font-size: 14px; }
+    .museum-times { gap: 7px; }
+    .time-card { padding: 5px 8px; min-width: 95px;}
+}
+
+@media (max-width: 450px) {
+    .news-button {
+        font-size: 13px;
+        padding: 8px 10px;
+    }
+
+    .about-section strong {
+    display: block;
+    text-align: center !important;
+    margin-top: 10px;
+    margin-bottom: 4px;
+  }
+  .about-section br { display: none; } /* Opsional agar tidak kepanjangan */
+  .news-card { min-width: 200px !important; max-width: 220px !important; }
+  .about-section p { font-size: 12px !important; }
+
+}

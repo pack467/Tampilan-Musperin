@@ -1,0 +1,210 @@
+:root {
+    --primary: #c62828;
+    --secondary: #ef5350;
+    --accent: #ffab91;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: #f8fff8; /* Mengubah latar belakang menjadi putih polos */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    padding: 1rem;
+    max-width: 500px;
+    position: relative;
+    z-index: 1;
+}
+
+.error-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    box-shadow: 0 20px 40px rgba(198, 40, 40, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.error-card:hover {
+    transform: translateY(-5px) rotateX(1.5deg) rotateY(-1.5deg);
+}
+
+.security-icon {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+    color: var(--primary);
+    animation: icon-float 4s ease-in-out infinite;
+}
+
+@keyframes icon-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+.error-code {
+    font-size: 6rem;
+    font-weight: 800;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    text-shadow: 4px 4px 0 rgba(239, 83, 80, 0.1);
+}
+
+.error-message {
+    color: var(--primary);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.error-message::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 2px;
+}
+
+.warning-grid {
+    display: grid;
+    gap: 1rem;
+    margin: 2rem 0;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.warning-item {
+    padding: 1rem;
+    background: rgba(255, 235, 238, 0.4);
+    border-radius: 12px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.warning-item:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 235, 238, 0.6);
+}
+
+.warning-icon {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+.warning-text {
+    color: #5c5c5c;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.home-btn {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 40px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 16px rgba(198, 40, 40, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.home-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.home-btn:hover::before {
+    left: 100%;
+}
+
+.home-btn:hover {
+    box-shadow: 0 12px 24px rgba(198, 40, 40, 0.3);
+    transform: translateY(-2px);
+}
+
+.shield-decoration {
+    position: absolute;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.shield-left {
+    width: 180px;
+    left: -60px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.shield-right {
+    width: 160px;
+    right: -60px;
+    bottom: 25%;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .error-card {
+        padding: 2rem 1rem;
+    }
+    
+    .error-code {
+        font-size: 5rem;
+    }
+    
+    .security-icon {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .shield-decoration {
+        display: none;
+    }
+}

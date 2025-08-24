@@ -1,0 +1,26 @@
+.copyright-footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    color: var(--primary-color);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 0.9rem;
+}
+/* MOBILE */
+@media (max-width: 600px) {
+    .copyright-footer {
+        text-align: center;
+        padding: 8px 1vw 16px 1vw;
+        margin-top: 12px;
+        color: var(--primary-color);
+        border-top: 1px solid rgba(0,0,0,0.07);
+        font-size: 0.75rem;
+        width: 100%;
+        left: 0;
+        right: 0;
+        box-sizing: border-box;
+        border-radius: 0 0 10px 10px;
+        overflow-x: hidden;
+        position: relative;
+    }
+}

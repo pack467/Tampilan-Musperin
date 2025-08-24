@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Admin Panel Musperin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/sidebar.css">
+    <link rel="stylesheet" href="../styles/add_activity.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+    
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <h2>Musperin Admin Panel</h2>
+        <div class="sidebar-menu">
+            <a href="admin_home.html">
+                <i class="fas fa-home icon"></i>
+                <span class="text">Beranda</span>
+            </a>
+            <a href="add_collection.html">
+                <i class="fas fa-book icon"></i>
+                <span class="text">Koleksi</span>
+            </a>
+            <a href="add_news.html">
+                <i class="fas fa-newspaper icon"></i>
+                <span class="text">Berita</span>
+            </a>
+            <a href="add_activity.html" class="active">
+                <i class="fas fa-calendar-alt icon"></i>
+                <span class="text">Kegiatan</span>
+            </a>
+            <a href="add_profile.html">
+                <i class="fas fa-info-circle icon"></i>
+                <span class="text">Profile</span>
+            </a>
+            <a href="add_carousel.html">
+                <i class="fas fa-images icon"></i>
+                <span class="text">Carousel</span>
+            </a>
+            <a href="add_account.html">
+                <i class="fas fa-user-tie icon"></i>
+                <span class="text">Akun</span>
+            </a>
+            <a href="history.html">
+                <i class="fas fa-history icon"></i>
+                <span class="text">Histori</span>
+            </a>
+        </div>
+
+        <button class="logout-button" onclick="logout()">
+            <i class="fas fa-sign-out-alt"></i>
+            <span class="text">Keluar</span>
+        </button>
+
+        <button class="toggle-button" onclick="toggleSidebar()">
+            <i class="fas fa-angle-left" id="toggle-icon"></i>
+        </button>
+    </div>
+
+    <!-- Bagian Utama -->
+    <div class="main-content">
+        <!-- Judul utama di luar kotak putih -->
+        <div class="main-title">
+            <h1><i class="fas fa-calendar-alt"></i> Manajemen Kegiatan</h1>
+            <div class="green-line"></div>
+        </div>
+
+        <!-- Header dengan tombol navigasi di dalam kotak putih -->
+        <div class="header">
+            <div class="page-switcher">
+                <button class="page-btn active" id="listBtn">
+                    <i class="fas fa-list"></i> Daftar Aktivitas
+                </button>
+                <button class="page-btn" id="addBtn">
+                    <i class="fas fa-plus"></i> Tambah Aktivitas
+                </button>
+            </div>
+        </div>
+
+        <!-- Halaman Daftar Aktivitas -->
+        <div class="page-container active" id="listPage">
+            <div class="table-header">
+                <h2><i class="fas fa-list"></i> Daftar Kegiatan</h2>
+                <div class="table-controls">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Cari kegiatan...">
+                    </div>
+                    <button class="refresh-btn" id="refreshBtn">
+                        <i class="fas fa-sync-alt"></i> Refresh
+                    </button>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table id="activityTable">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Judul Kegiatan</th>
+                            <th>Jenis</th>
+                            <th>Tanggal</th>
+                            <th>Jam</th>
+                            <th>Harga</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="activityTableBody">
+                        <!-- Data akan diisi oleh JavaScript -->
+                        <tr>
+                            <td>1.</td>
+                            <td>Pameran Sejarah Perkebunan</td>
+                            <td>Permanent</td>
+                            <td>01/01/2025 s.d. 31/12/2025</td>
+                            <td>09:00 - 17:00</td>
+                            <td>Rp 50.000</td>
+                            <td class="action-buttons">
+                                <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn delete-btn"><i class="fas fa-trash-alt"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2.</td>
+                            <td>Workshop Pengolahan Teh</td>
+                            <td>Temporary</td>
+                            <td>15/02/2025 s.d. 16/02/2025</td>
+                            <td>10:00 - 15:00</td>
+                            <td>Rp 150.000</td>
+                            <td class="action-buttons">
+                                <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn delete-btn"><i class="fas fa-trash-alt"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="table-footer">
+                <div class="pagination-info">
+                    Menampilkan <span id="currentCount">2</span> dari <span id="totalCount">2</span> kegiatan
+                </div>
+                <div class="pagination-controls">
+                    <button id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                    <span id="currentPage">1</span>
+                    <button id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Halaman Tambah Aktivitas -->
+        <div class="page-container" id="addPage">
+            <h2><i class="fas fa-plus-circle"></i> Tambah Kegiatan Baru</h2>
+            
+            <form id="activityForm" enctype="multipart/form-data">
+                <div class="form-grid">
+                    <!-- Kolom Kiri -->
+                    <div class="form-column">
+                        <div class="form-group">
+                            <label for="activityType">Jenis Kegiatan <span class="required">*</span></label>
+                            <select id="activityType" name="activityType" required>
+                                <option value="">Pilih Jenis Kegiatan</option>
+                                <option value="temporary">Acara Khusus (Temporary)</option>
+                                <option value="permanent">Pameran Tetap (Permanent)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="activityTitle">Judul Kegiatan <span class="required">*</span></label>
+                            <input type="text" id="activityTitle" name="activityTitle" placeholder="Contoh: 'Pameran Sejarah Perkebunan'" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="activityImage">Gambar/Foto Kegiatan <span class="required">*</span></label>
+                            <div class="image-upload">
+                                <label for="activityImage" class="upload-btn">
+                                    <i class="fas fa-cloud-upload-alt"></i> Pilih Gambar
+                                </label>
+                                <input type="file" id="activityImage" name="activityImage" accept="image/*" required>
+                                <div class="image-preview" id="imagePreview">
+                                    <p>Belum ada gambar dipilih</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="activityStartDate">Tanggal Mulai <span class="required">*</span></label>
+                            <input type="date" id="activityStartDate" name="activityStartDate" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="activityEndDate">Tanggal Berakhir</label>
+                            <input type="date" id="activityEndDate" name="activityEndDate">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="activityTime">Jam Operasional <span class="required">*</span></label>
+                            <input type="text" id="activityTime" name="activityTime" placeholder="Contoh: 09:00 - 17:00 WIB" required>
+                        </div>
+                    </div>
+                    
+                    <!-- Kolom Kanan -->
+                    <div class="form-column">
+                        <div class="form-group">
+                            <label for="activityPrice">Harga Tiket / Biaya</label>
+                            <input type="text" id="activityPrice" name="activityPrice" placeholder="Contoh: Rp 150.000 atau Gratis">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="activityDescription">Deskripsi Singkat Kegiatan <span class="required">*</span></label>
+                            <textarea id="activityDescription" name="activityDescription" rows="4" placeholder="Penjelasan/paragraf pendek tentang kegiatan" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="activityFeatures">Fitur/Highlight Kegiatan</label>
+                            <div class="features-container">
+                                <div class="feature-input">
+                                    <input type="text" class="feature-field" placeholder="Masukkan fitur (misal: Tur interaktif)">
+                                    <button type="button" class="add-feature-btn"><i class="fas fa-plus"></i></button>
+                                </div>
+                                <div class="feature-list" id="featureList">
+                                    <!-- Daftar fitur akan ditambahkan di sini -->
+                                    <div class="feature-item">
+                                        Tur interaktif <button type="button" class="remove-feature"><i class="fas fa-times"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="activityContact">Kontak yang Dapat Dihubungi <span class="required">*</span></label>
+                            <input type="text" id="activityContact" name="activityContact" placeholder="Contoh: +62 822-8723-3036" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Status Kegiatan</label>
+                            <div class="radio-group">
+                                <label>
+                                    <input type="radio" name="activityStatus" value="active" checked>
+                                    <span class="radio-custom"></span>
+                                    Aktif
+                                </label>
+                                <label>
+                                    <input type="radio" name="activityStatus" value="inactive">
+                                    <span class="radio-custom"></span>
+                                    Tidak Aktif
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="reset" class="reset-btn">
+                                <i class="fas fa-undo"></i> Reset
+                            </button>
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-save"></i> Simpan Kegiatan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="copyright-footer">
+            © 2025 Musperin Admin Panel. All rights reserved.
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../scripts/add_activity.js"></script>
+    <script src="../scripts/sidebar.js"></script>
+    <script src="../scripts/logout.js"></script>
+
+</body>
+</html>

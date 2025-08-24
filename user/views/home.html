@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museum Perkebunan Indonesia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/caraousel.css">
+    <link rel="stylesheet" href="../styles/background.css">
+    <link rel="stylesheet" href="../styles/home.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+</head>
+<body>
+
+<header>
+    <div class="logo-container">
+        <img src="../images/logo.png" alt="Logo" class="logo">
+        <div class="museum-name">Museum Perkebunan Indonesia</div>
+    </div>
+    
+    <!-- Tombol hamburger untuk mobile -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+    </button>
+    
+    <ul class="navbar" id="navbar">
+        <li>
+            <a href="home.html"><i class="fas fa-home icon"></i>Beranda</a>
+        </li>
+        <li>
+            <a href="collection.html"><i class="fas fa-th icon"></i>Koleksi</a>
+        </li>
+        <li>
+            <a href="activity.html"><i class="fas fa-calendar-alt icon"></i>Kegiatan</a>
+        </li>
+        <li>
+            <a href="news.html"><i class="fas fa-newspaper icon"></i>Berita</a>
+        </li>
+        <li>
+            <a href="profile.html"><i class="fas fa-info-circle icon"></i>Profil Kami</a>
+        </li>
+    </ul>
+</header>
+
+<!-- Carousel -->
+<div class="carousel">
+    <div><img src="../images/Banner.jpg" alt="Image 1"></div>
+    <div><img src="../images/Banner.jpg" alt="Image 1"></div>
+    <div><img src="../images/Banner.jpg" alt="Image 1"></div>
+</div>
+
+<div class="content custom-content">
+  <h1 class="museum-welcome">Selamat Datang di<br><span>Museum Perkebunan Indonesia!</span></h1>
+  <div class="museum-buildings">
+    <div class="building">
+      <img src="../images/bangunan.jpg" alt="Gedung Musperin 1" class="building-img" />
+      <div class="building-label">Gedung 1</div>
+    </div>
+    <div class="building">
+      <img src="../images/musperin 2.jpg" alt="Gedung Musperin 2" class="building-img" />
+      <div class="building-label">Gedung 2</div>
+    </div>
+  </div>
+  <div class="museum-times">
+    <div class="time-card glass-card">
+      <div class="tc-header">
+        <i class="fas fa-university tc-icon"></i>
+        <span class="gedung-name">Musperin 1</span>
+      </div>
+      <div class="jam-buka"><i class="far fa-clock"></i> 08.00 - 16.00 WIB</div>
+    </div>
+    <div class="time-card glass-card">
+      <div class="tc-header">
+        <i class="fa-solid fa-building"></i>
+        <span class="gedung-name">Musperin 2</span>
+      </div>
+      <div class="jam-buka"><i class="far fa-clock"></i> 09.00 - 15.00 WIB</div>
+    </div>
+  </div>
+</div>
+
+<!-- Informasi Terbaru -->
+<div class="info-section">
+    <h2>Informasi Terbaru</h2>
+    <div class="news-container">
+        <div class="news-card">
+            <div class="news-image">
+                <img src="../images/Brankas.jpg" alt="Koleksi Terbaru">
+                <div class="news-badge">Koleksi</div>
+            </div>
+            <div class="news-content">
+                <h3>Alat Pemrosesan Teh Antik Tahun 1920</h3>
+                <p>Koleksi baru alat pemrosesan teh dari era kolonial Belanda telah tiba di museum. Alat ini digunakan di perkebunan teh...</p>
+                <div class="news-meta">
+                    <span><i class="fas fa-calendar-alt"></i> 15 Juni 2025</span>
+                    <a href="#" class="news-button">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="news-card">
+            <div class="news-image">
+                <img src="../images/musperin 2.jpg" alt="Kegiatan Terbaru">
+                <div class="news-badge">Kegiatan</div>
+            </div>
+            <div class="news-content">
+                <h3>Workshop Pengolahan Kopi Tradisional</h3>
+                <p>Ikuti workshop pengolahan kopi tradisional dengan metode manual. Pelajari teknik sangrai, giling, dan seduh kopi...</p>
+                <div class="news-meta">
+                    <span><i class="fas fa-calendar-alt"></i> 22 Juni 2025</span>
+                    <a href="#" class="news-button">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="news-card">
+            <div class="news-image">
+                <img src="../images/peresmian.jpg" alt="Berita Terbaru">
+                <div class="news-badge">Berita</div>
+            </div>
+            <div class="news-content">
+                <h3>Museum Raih Penghargaan Pariwisata Berkelanjutan</h3>
+                <p>Musperin meraih penghargaan "Green Museum Award 2025" untuk komitmennya dalam pelestarian lingkungan dan...</p>
+                <div class="news-meta">
+                    <span><i class="fas fa-calendar-alt"></i> 5 Juni 2025</span>
+                    <a href="#" class="news-button">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Tentang Kami -->
+<div class="about-section">
+    <h2>Tentang Kami</h2>
+    <p>
+        <span class="highlight">Museum Perkebunan Indonesia (Musperin)</span> didirikan oleh <span class="highlight">Soedjai Kartasasmita</span>, seorang tokoh perkebunan Indonesia, pada tahun 2016. Musperin merupakan museum perkebunan pertama di Sumatera Utara dan Indonesia.
+        <br><br>
+        <strong>Pendirian</strong><br>
+        Museum Perkebunan Indonesia didirikan melalui Yayasan Museum Perkebunan Indonesia. Pembangunan museum direncanakan pada <span class="highlight">10 Desember 2010</span>, bertepatan dengan hari perkebunan Indonesia di Medan. Museum Perkebunan Indonesia diresmikan pada <span class="highlight">10 Desember 2016</span> oleh Gubernur Sumatera Utara, <span class="highlight">Tengku Erry Nuradi</span>.
+        <br><br>
+        <strong>Gedung</strong><br>
+        Musperin menempati dua gedung, yaitu <span class="highlight">Musperin 1</span> dan <span class="highlight">Musperin 2</span>. Musperin 1 berada di Kompleks Pusat Penelitian Kelapa Sawit (PPKS), Jalan Brigjen Katamso. Musperin 2 menempati lantai 1 dan lantai 4 Gedung Badan Kerja Sama Perusahaan Perkebunan Sumatera (BKSPPS).
+        <br><br>
+        <strong>Tujuan</strong><br>
+        Museum Perkebunan Indonesia bertujuan sebagai sarana rekreasi dan pariwisata bagi masyarakat. Museum Perkebunan Indonesia juga bertujuan untuk menambah ilmu pengetahuan mengenai kebun yang ada di Indonesia. Museum Perkebunan Indonesia memiliki slogan <span class="highlight">"Menghubungkan Masa Lalu dan Masa Depan"</span>.
+    </p>
+</div>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-column footer-info">
+            <div class="footer-logo">
+                <img src="../images/logo.png" alt="Museum Perkebunan Indonesia">
+                <div>
+                    <h3>Museum Perkebunan Indonesia</h3>
+                    <p class="footer-tagline">"Menghubungkan Masa Lalu dan Masa Depan"</p>
+                </div>
+            </div>
+            
+            <div class="footer-contact">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <p>+62 822-8723-3036</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>info@musperin.id</p>
+                </div>
+            </div>
+            
+            <div class="footer-social">
+                <a href="https://instagram.com/musperin" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/6282287233036" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.facebook.com/musperin" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-column footer-locations">
+            <h4 class="footer-title">Lokasi Kami</h4>
+            <div class="location-item">
+                <div class="location-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                    <strong>Musperin 1</strong>
+                    <p>Jl. Brigjen Katamso, Kp. Baru, Medan Maimun</p>
+                </div>
+            </div>
+            <div class="location-item">
+                <div class="location-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                    <strong>Musperin 2</strong>
+                    <p>Gedung BKSPPS, Jl. Pemuda, Alur, Medan Maimun</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <div class="footer-bottom-inner">
+            <div class="copyright">
+                &copy; 2025 Museum Perkebunan Indonesia. Semua hak dilindungi.
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="../scripts/script.js"></script>
+<script src="../scripts/button_mobile.js"></script>
+<script src="../scripts/home.js"></script>
+
+</body>
+</html>

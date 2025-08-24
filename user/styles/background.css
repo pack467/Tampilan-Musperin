@@ -1,0 +1,13 @@
+body {
+    background-color: rgba(233, 233, 233, 0.795);
+    background-image: url('../images/background.jpg');
+    background-size: cover; /* Gambar background menutupi seluruh area body */
+    background-position: center; /* Gambar background diposisikan di tengah */
+    background-attachment: fixed; /* Gambar background tetap di tempat saat scrolling */
+    background-blend-mode: lighten;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    overflow-x: hidden; /* Mencegah overflow horizontal */
+}

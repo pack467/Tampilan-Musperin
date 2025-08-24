@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Admin Panel Musperin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/sidebar.css">
+    <link rel="stylesheet" href="../styles/add_account.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+    
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <h2>Musperin Admin Panel</h2>
+        <div class="sidebar-menu">
+            <a href="admin_home.html">
+                <i class="fas fa-home icon"></i>
+                <span class="text">Beranda</span>
+            </a>
+            <a href="add_collection.html">
+                <i class="fas fa-book icon"></i>
+                <span class="text">Koleksi</span>
+            </a>
+            <a href="add_news.html">
+                <i class="fas fa-newspaper icon"></i>
+                <span class="text">Berita</span>
+            </a>
+            <a href="add_activity.html">
+                <i class="fas fa-calendar-alt icon"></i>
+                <span class="text">Kegiatan</span>
+            </a>
+            <a href="add_profile.html">
+                <i class="fas fa-info-circle icon"></i>
+                <span class="text">Profile</span>
+            </a>
+            <a href="add_carousel.html">
+                <i class="fas fa-images icon"></i>
+                <span class="text">Carousel</span>
+            </a>
+            <a href="add_account.html" class="active">
+                <i class="fas fa-user-tie icon"></i>
+                <span class="text">Akun</span>
+            </a>
+            <a href="history.html">
+                <i class="fas fa-history icon"></i>
+                <span class="text">Histori</span>
+            </a>
+        </div>
+
+        <button class="logout-button" onclick="logout()">
+            <i class="fas fa-sign-out-alt"></i>
+            <span class="text">Keluar</span> <!-- Teks "Keluar" hanya muncul di desktop -->
+        </button>
+
+        <button class="toggle-button" onclick="toggleSidebar()">
+            <i class="fas fa-angle-left" id="toggle-icon"></i>
+        </button>
+    </div>
+
+    <div class="main-content">
+        <!-- Header judul dengan icon dan garis -->
+        <div class="page-header">
+            <div class="header-title">
+                <i class="fas fa-users-cog header-icon"></i>
+                <span>Manajemen Akun</span>
+            </div>
+            <div class="header-divider"></div>
+        </div>
+        <!-- Tab Navigasi -->
+        <div class="account-tabs">
+            <button class="tab-button active" id="list-tab">Daftar Akun</button>
+            <button class="tab-button" id="add-tab">Tambah Akun</button>
+        </div>
+        <!-- Daftar Akun (Card Tabel) -->
+        <div id="account-list-container" class="account-list-container fade-in">
+            <table class="account-table">
+                <thead>
+                    <tr>
+                        <th>Nama Pemilik</th>
+                        <th>Username</th>
+                        <th>Role</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Admin Utama</td>
+                        <td>admin@musperin.com</td>
+                        <td><span class="role-badge">Admin</span></td>
+                        <td class="action-buttons">
+                            <button class="btn btn-edit"><i class="fas fa-edit"></i> Edit</button>
+                            <button class="btn btn-delete"><i class="fas fa-trash"></i> Hapus</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Budi Santoso</td>
+                        <td>budi.santoso</td>
+                        <td><span class="role-badge role-staff">Staff</span></td>
+                        <td class="action-buttons">
+                            <button class="btn btn-edit"><i class="fas fa-edit"></i> Edit</button>
+                            <button class="btn btn-delete"><i class="fas fa-trash"></i> Hapus</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Siti Rahayu</td>
+                        <td>siti.rahayu</td>
+                        <td><span class="role-badge role-staff">Staff</span></td>
+                        <td class="action-buttons">
+                            <button class="btn btn-edit"><i class="fas fa-edit"></i> Edit</button>
+                            <button class="btn btn-delete"><i class="fas fa-trash"></i> Hapus</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Agus Setiawan</td>
+                        <td>agus.setiawan</td>
+                        <td><span class="role-badge">Admin</span></td>
+                        <td class="action-buttons">
+                            <button class="btn btn-edit"><i class="fas fa-edit"></i> Edit</button>
+                            <button class="btn btn-delete"><i class="fas fa-trash"></i> Hapus</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- Form Tambah Akun -->
+        <div id="account-form-container" class="account-form-container">
+            <h2 class="form-title">Tambah Akun Baru</h2>
+            <form id="account-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="fullname" class="form-label">Nama Pemilik</label>
+                        <input type="text" id="fullname" class="form-input" placeholder="Masukkan nama lengkap" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" id="username" class="form-input" placeholder="Masukkan username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="role" class="form-label">Role</label>
+                        <select id="role" class="form-select" required>
+                            <option value="">Pilih role</option>
+                            <option value="admin">Admin</option>
+                            <option value="staff">Staff</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="form-label">Password</label>
+                        <div class="password-container">
+                            <input type="password" id="password" class="form-input" placeholder="Masukkan password" required>
+                            <button type="button" class="toggle-password"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password" class="form-label">Konfirmasi Password</label>
+                        <div class="password-container">
+                            <input type="password" id="confirm-password" class="form-input" placeholder="Konfirmasi password" required>
+                        </div>
+                    </div>
+                </div>
+
+
+            <div class="copyright-footer">
+                © 2025 Musperin Admin Panel. All rights reserved.
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../scripts/add_account.js"></script>
+    <script src="../scripts/sidebar.js"></script>
+    <script src="../scripts/logout.js"></script>
+
+    </body>
+</html>

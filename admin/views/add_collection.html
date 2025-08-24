@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Admin Panel Musperin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/sidebar.css">
+    <link rel="stylesheet" href="../styles/add_collection.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+    
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <h2>Musperin Admin Panel</h2>
+        <div class="sidebar-menu">
+            <a href="admin_home.html">
+                <i class="fas fa-home icon"></i>
+                <span class="text">Beranda</span>
+            </a>
+            <a href="add_collection.html" class="active">
+                <i class="fas fa-book icon"></i>
+                <span class="text">Koleksi</span>
+            </a>
+            <a href="add_news.html">
+                <i class="fas fa-newspaper icon"></i>
+                <span class="text">Berita</span>
+            </a>
+            <a href="add_activity.html">
+                <i class="fas fa-calendar-alt icon"></i>
+                <span class="text">Kegiatan</span>
+            </a>
+            <a href="add_profile.html">
+                <i class="fas fa-info-circle icon"></i>
+                <span class="text">Profile</span>
+            </a>
+            <a href="add_carousel.html">
+                <i class="fas fa-images icon"></i>
+                <span class="text">Carousel</span>
+            </a>
+            <a href="add_account.html">
+                <i class="fas fa-user-tie icon"></i>
+                <span class="text">Akun</span>
+            </a>
+            <a href="history.html">
+                <i class="fas fa-history icon"></i>
+                <span class="text">Histori</span>
+            </a>
+        </div>
+
+        <button class="logout-button" onclick="logout()">
+            <i class="fas fa-sign-out-alt"></i>
+            <span class="text">Keluar</span> <!-- Teks "Keluar" hanya muncul di desktop -->
+        </button>
+
+        <button class="toggle-button" onclick="toggleSidebar()">
+            <i class="fas fa-angle-left" id="toggle-icon"></i>
+        </button>
+    </div>
+
+    <!-- Bagian ini -->
+    <div class="main-content">
+        <div class="crud-panel-wrapper">
+            <div class="content-header">
+                <h1 class="header-koleksi">
+                    <span class="header-icon"><i class="fas fa-book"></i></span>
+                    <span class="header-text">Kelola Koleksi</span>
+                </h1>
+            </div>
+            <div class="switcher">
+                <button id="btnShowTable" class="switch-btn active"><i class="fas fa-list"></i> Daftar Koleksi</button>
+                <button id="btnShowForm" class="switch-btn"><i class="fas fa-plus"></i> Tambah Koleksi</button>
+            </div>
+            <!-- PANEL: DAFTAR KOLEKSI -->
+            <div id="tablePanel" class="crud-card">
+                <div class="section-title"><i class="fas fa-table"></i> Daftar Koleksi</div>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nama Koleksi</th>
+                                <th>Kategori</th>
+                                <th>Kondisi</th>
+                                <th>Tanggal Ditambahkan</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Kompor Kuno</td>
+                                <td>Peralatan Dapur</td>
+                                <td>Perlu Perawatan</td>
+                                <td>15 Maret 2024</td>
+                                <td>
+                                    <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Lumpang Batu</td>
+                                <td>Peralatan Dapur</td>
+                                <td>Baik</td>
+                                <td>10 Februari 2024</td>
+                                <td>
+                                    <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Keris Majapahit</td>
+                                <td>Senjata Tradisional</td>
+                                <td>Baik</td>
+                                <td>28 Januari 2024</td>
+                                <td>
+                                    <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Bajak Sawah Tradisional</td>
+                                <td>Alat Pertanian</td>
+                                <td>Rusak Ringan</td>
+                                <td>5 Januari 2024</td>
+                                <td>
+                                    <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+<!-- Form Tambah Koleksi -->
+<div id="formPanel" class="crud-card" style="display: none;">
+    <form class="crud-form" autocomplete="off">
+        <div class="section-title"><i class="fas fa-book"></i> Data Koleksi</div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="title">Nama Koleksi</label>
+                <input type="text" id="title" placeholder="Masukkan nama koleksi" required>
+            </div>
+            <div class="form-group">
+                <label for="category">Kategori</label>
+                <select id="category" required>
+                    <option value="">Pilih kategori</option>
+                    <option value="Peralatan Dapur">Peralatan Dapur</option>
+                    <option value="Alat Pertanian">Alat Pertanian</option>
+                    <option value="Senjata Tradisional">Senjata Tradisional</option>
+                    <option value="Alat Musik">Alat Musik</option>
+                    <option value="Pakaian Adat">Pakaian Adat</option>
+                    <option value="Perhiasan">Perhiasan</option>
+                    <option value="Lainnya">Lainnya</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="dimension">Dimensi (Panjang x Lebar x Tinggi)</label>
+                <input type="text" id="dimension" placeholder="Contoh: 80cm x 50cm x 60cm">
+            </div>
+            <div class="form-group">
+                <label for="weight">Berat (kg)</label>
+                <input type="number" id="weight" placeholder="Masukkan berat koleksi" step="0.1">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="material">Material Utama</label>
+                <input type="text" id="material" placeholder="Contoh: Besi Cor, Kayu Jati">
+            </div>
+            <div class="form-group">
+                <label for="condition">Kondisi</label>
+                <select id="condition">
+                    <option value="Baik">Baik</option>
+                    <option value="Perlu Perawatan">Perlu Perawatan</option>
+                    <option value="Rusak Ringan">Rusak Ringan</option>
+                    <option value="Rusak Berat">Rusak Berat</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="description">Deskripsi Koleksi</label>
+            <textarea id="description" placeholder="Deskripsikan koleksi secara lengkap..." required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="history">Sejarah Koleksi</label>
+            <textarea id="history" placeholder="Masukkan sejarah atau asal-usul koleksi..."></textarea>
+        </div>
+        <div class="form-group">
+            <label for="conservation">Proses Konservasi</label>
+            <textarea id="conservation" placeholder="Deskripsikan proses konservasi yang dilakukan..."></textarea>
+        </div>
+
+                    <div class="form-row">
+                        <div class="form-group image-upload-group">
+                            <label>Gambar Koleksi</label>
+                            <div class="image-upload-preview-wrapper">
+                                <!-- Upload Box -->
+                                <label class="image-upload" id="imageUpload" style="display: block;">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <p>Klik/drag gambar</p>
+                                    <p class="small">Format: JPG, PNG (max 1MB)</p>
+                                    <input type="file" id="imageInput" accept="image/*" style="display: none;">
+                                </label>
+                                <!-- Preview Box -->
+                                <div class="image-preview" id="imagePreview" style="display:none; position:relative;">
+                                    <img id="previewImage" src="" alt="Preview Gambar" style="cursor:pointer;">
+                                    <button type="button" class="remove-image-btn" id="removeImageBtn" title="Hapus gambar">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+        <div class="form-actions">
+            <button type="button" class="btn btn-danger" id="cancelBtn">
+                <i class="fas fa-times"></i> Batal
+            </button>
+            <button type="submit" class="btn btn-primary" id="saveBtn">
+                <i class="fas fa-save"></i> Simpan Koleksi
+            </button>
+        </div>
+    </form>
+</div>
+
+            <div class="copyright-footer">
+                © 2025 Musperin Admin Panel. All rights reserved.
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../scripts/add_collection.js"></script>
+    <script src="../scripts/sidebar.js"></script>
+    <script src="../scripts/logout.js"></script>
+
+    </body>
+</html>

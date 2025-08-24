@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museum Perkebunan Indonesia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/caraousel.css">
+    <link rel="stylesheet" href="../styles/background.css">
+    <link rel="stylesheet" href="../styles/home.css">
+    <link rel="stylesheet" href="../styles/activity.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+</head>
+<body>
+
+<header>
+    <div class="logo-container">
+        <img src="../images/logo.png" alt="Logo" class="logo">
+        <div class="museum-name">Museum Perkebunan Indonesia</div>
+    </div>
+
+    <!-- Tombol hamburger untuk mobile -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <ul class="navbar" id="navbar">
+        <li>
+            <a href="home.html"><i class="fas fa-home icon"></i>Beranda</a>
+        </li>
+        <li>
+            <a href="collection.html"><i class="fas fa-th icon"></i>Koleksi</a>
+        </li>
+        <li>
+            <a href="activity.html"><i class="fas fa-calendar-alt icon"></i>Kegiatan</a>
+        </li>
+        <li>
+            <a href="news.html"><i class="fas fa-newspaper icon"></i>Berita</a>
+        </li>
+        <li>
+            <a href="profile.html"><i class="fas fa-info-circle icon"></i>Profil Kami</a>
+        </li>
+    </ul>
+</header>
+
+<!-- Carousel -->
+<div class="carousel">
+    <div><img src="../images/Banner.jpg" alt="Image 1"></div>
+    <div><img src="../images/Banner.jpg" alt="Image 1"></div>
+</div>
+
+<!-- Activities Section -->
+<section class="activities-section">
+
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Cari Kegiatan..." id="searchInput">
+            <span class="search-icon">
+                <i class="fas fa-search"></i>
+            </span>
+        </div>
+
+    <div class="activities-container">
+        <div class="section-header">
+            <h2>Kegiatan Museum</h2>
+            <p>Jelajahi berbagai pameran dan acara khusus kami</p>
+        </div>
+        
+        <div class="activities-tabs">
+            <button class="tab-button active" data-tab="all">Semua</button>
+            <button class="tab-button" data-tab="permanent">Pameran Tetap</button>
+            <button class="tab-button" data-tab="temporary">Acara Khusus</button>
+        </div>
+        
+        <div class="activities-grid">
+            <!-- Temporary Event Card 1 -->
+            <div class="activity-card temporary">
+                <div class="card-image">
+                    <img src="../images/bangunan.jpg" alt="Pameran Sejarah">
+                    <div class="date-badge">
+                        <span>15</span>
+                        <span>Mar</span>
+                    </div>
+                    <div class="event-type-badge">Acara Khusus</div>
+                </div>
+                <div class="card-content">
+                    <h3>Pameran Sejarah Perkebunan</h3>
+                    <div class="activity-meta">
+                        <span class="meta-item">
+                            <i class="fas fa-calendar-day"></i> 15-30 Maret 2025
+                        </span>
+                        <span class="meta-item">
+                            <i class="fas fa-clock"></i> 09.00 - 17.00 WIB
+                        </span>
+                    </div>
+                    <div class="excerpt">
+                        <p class="excerpt-text">Pameran ini menghadirkan perjalanan panjang sejarah perkebunan di Indonesia melalui koleksi artefak, diorama interaktif, foto dokumentasi, dan alat tradisional serta modern yang digunakan pada berbagai era, memperkaya wawasan pengunjung dengan narasi mendalam tentang evolusi industri perkebunan dari masa kolonial hingga era modern.</p>
+                        <div class="read-more-trigger">
+                            <span class="read-more-text">
+                                <i class="fas fa-eye"></i> Baca selengkapnya
+                            </span>
+                        </div>
+                        <ul class="activity-details">
+                            <li><i class="fas fa-check-circle"></i> Tur interaktif</li>
+                            <li><i class="fas fa-check-circle"></i> Demo pengolahan</li>
+                            <li><i class="fas fa-check-circle"></i> Sesi foto vintage</li>
+                        </ul>
+                    </div>
+                    <div class="activity-contact">
+                        <strong>Info lebih lanjut hubungi:</strong>
+                        <a href="tel:+6282287233036" class="contact-number">
+                            <i class="fas fa-phone-alt"></i> +62 822-8723-3036
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Permanent Exhibition Card 1 -->
+            <div class="activity-card permanent">
+                <div class="card-image">
+                    <img src="../images/permanent1.jpg" alt="Pameran Tetap">
+                    <div class="event-type-badge permanent-badge">Pameran Tetap</div>
+                </div>
+                <div class="card-content">
+                    <h3>Sejarah Perkebunan Indonesia</h3>
+                    <div class="activity-meta">
+                        <span class="meta-item">
+                            <i class="fas fa-calendar-alt"></i> Setiap Hari
+                        </span>
+                        <span class="meta-item">
+                            <i class="fas fa-clock"></i> 08.00 - 16.00 WIB
+                        </span>
+                    </div>
+                    <div class="excerpt">
+                        <p class="excerpt-text">Pameran permanen yang menampilkan perkembangan perkebunan di Indonesia dari masa ke masa, termasuk artefak bersejarah dan diorama interaktif yang menggambarkan transformasi teknologi pertanian dari era tradisional hingga modern dengan koleksi lengkap peralatan dan dokumentasi visual.</p>
+                        <div class="read-more-trigger">
+                            <span class="read-more-text">
+                                <i class="fas fa-eye"></i> Baca selengkapnya
+                            </span>
+                        </div>
+                        <ul class="activity-details">
+                            <li><i class="fas fa-check-circle"></i> Koleksi alat tradisional</li>
+                            <li><i class="fas fa-check-circle"></i> Dokumentasi sejarah</li>
+                            <li><i class="fas fa-check-circle"></i> Peta perkebunan kuno</li>
+                        </ul>
+                    </div>
+                    <div class="activity-contact">
+                        <strong>Info lebih lanjut hubungi:</strong>
+                        <a href="tel:+6282287233036" class="contact-number">
+                            <i class="fas fa-phone-alt"></i> +62 822-8723-3036
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Temporary Event Card 2 -->
+            <div class="activity-card temporary">
+                <div class="card-image">
+                    <img src="../images/activity2.jpg" alt="Lokakarya">
+                    <div class="date-badge">
+                        <span>22</span>
+                        <span>Apr</span>
+                    </div>
+                    <div class="event-type-badge">Acara Khusus</div>
+                </div>
+                <div class="card-content">
+                    <h3>Lokakarya Pengolahan Teh</h3>
+                    <div class="activity-meta">
+                        <span class="meta-item">
+                            <i class="fas fa-calendar-day"></i> 22 April 2025
+                        </span>
+                        <span class="meta-item">
+                            <i class="fas fa-clock"></i> 13.00 - 16.00 WIB
+                        </span>
+                        <span class="meta-item">
+                            <i class="fas fa-tag"></i> Rp 150.000
+                        </span>
+                    </div>
+                    <div class="excerpt">
+                        <p class="excerpt-text">Pelajari teknik pengolahan teh tradisional langsung dari para ahli perkebunan dengan fasilitas lengkap dan bahan premium, mencakup seluruh proses dari pemetikan daun hingga pengemasan, dengan panduan praktis step-by-step untuk menghasilkan teh berkualitas tinggi.</p>
+                        <div class="read-more-trigger">
+                            <span class="read-more-text">
+                                <i class="fas fa-eye"></i> Baca selengkapnya
+                            </span>
+                        </div>
+                        <ul class="activity-details">
+                            <li><i class="fas fa-check-circle"></i> Materi teori & praktek</li>
+                            <li><i class="fas fa-check-circle"></i> Sertifikat peserta</li>
+                            <li><i class="fas fa-check-circle"></i> Goodie bag eksklusif</li>
+                        </ul>
+                    </div>
+                    <div class="activity-contact">
+                        <strong>Info lebih lanjut hubungi:</strong>
+                        <a href="tel:+6282287233036" class="contact-number">
+                            <i class="fas fa-phone-alt"></i> +62 822-8723-3036
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Permanent Exhibition Card 2 -->
+            <div class="activity-card permanent">
+                <div class="card-image">
+                    <img src="../images/permanent2.jpg" alt="Pameran Tetap">
+                    <div class="event-type-badge permanent-badge">Pameran Tetap</div>
+                </div>
+                <div class="card-content">
+                    <h3>Teknologi Perkebunan Modern</h3>
+                    <div class="activity-meta">
+                        <span class="meta-item">
+                            <i class="fas fa-calendar-alt"></i> Setiap Hari
+                        </span>
+                        <span class="meta-item">
+                            <i class="fas fa-clock"></i> 08.00 - 16.00 WIB
+                        </span>
+                        <span class="meta-item">
+                            <i class="fas fa-tag"></i> Gratis
+                        </span>
+                    </div>
+                    <div class="excerpt">
+                        <p class="excerpt-text">Pameran ini menghadirkan perjalanan panjang sejarah perkebunan di Indonesia melalui koleksi artefak, diorama interaktif, foto dokumentasi, dan alat tradisional serta modern yang digunakan pada berbagai era, menampilkan inovasi teknologi terkini dalam industri perkebunan berkelanjutan.</p>
+                        <div class="read-more-trigger">
+                            <span class="read-more-text">
+                                <i class="fas fa-eye"></i> Baca selengkapnya
+                            </span>
+                        </div>
+                        <ul class="activity-details">
+                            <li><i class="fas fa-check-circle"></i> Alat pengolahan modern</li>
+                            <li><i class="fas fa-check-circle"></i> Teknologi ramah lingkungan</li>
+                            <li><i class="fas fa-check-circle"></i> Demonstrasi interaktif</li>
+                        </ul>
+                    </div>
+                    <div class="activity-contact">
+                        <strong>Info lebih lanjut hubungi:</strong>
+                        <a href="tel:+6282287233036" class="contact-number">
+                            <i class="fas fa-phone-alt"></i> +62 822-8723-3036
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="pagination-container">
+            <button class="pagination-button prev-next" disabled>
+                <i class="fas fa-chevron-left"></i>
+                <span>Sebelumnya</span>
+            </button>
+            <div class="page-numbers">
+                <button class="pagination-button active">1</button>
+                <button class="pagination-button">2</button>
+                <button class="pagination-button">3</button>
+                <button class="pagination-button">4</button>
+                <button class="pagination-button">5</button>
+                <span class="ellipsis">...</span>
+                <button class="pagination-button">12</button>
+            </div>
+            <button class="pagination-button prev-next">
+                <span>Selanjutnya</span>
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Modal untuk Read More -->
+<div id="readMoreModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 id="modalTitle"></h3>
+            <span class="close">&times;</span>
+        </div>
+        <div class="modal-body">
+            <p id="modalText"></p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-column footer-info">
+            <div class="footer-logo">
+                <img src="../images/logo.png" alt="Museum Perkebunan Indonesia">
+                <div>
+                    <h3>Museum Perkebunan Indonesia</h3>
+                    <p class="footer-tagline">"Menghubungkan Masa Lalu dan Masa Depan"</p>
+                </div>
+            </div>
+            
+            <div class="footer-contact">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <p>+62 822-8723-3036</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>info@musperin.id</p>
+                </div>
+            </div>
+            
+            <div class="footer-social">
+                <a href="https://instagram.com/musperin" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/6282287233036" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.facebook.com/musperin" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-column footer-locations">
+            <h4 class="footer-title">Lokasi Kami</h4>
+            <div class="location-item">
+                <div class="location-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                    <strong>Musperin 1</strong>
+                    <p>Jl. Brigjen Katamso, Kp. Baru, Medan Maimun</p>
+                </div>
+            </div>
+            <div class="location-item">
+                <div class="location-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                    <strong>Musperin 2</strong>
+                    <p>Gedung BKSPPS, Jl. Pemuda, Alur, Medan Maimun</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <div class="footer-bottom-inner">
+            <div class="copyright">
+                &copy; 2025 Museum Perkebunan Indonesia. Semua hak dilindungi.
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="../scripts/script.js"></script>
+<script src="../scripts/button_mobile.js"></script>
+<script src="../scripts/pagination.js"></script>
+<script src="../scripts/activity.js"></script>
+
+</body>
+</html>

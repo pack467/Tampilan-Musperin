@@ -1,0 +1,33 @@
+/* ===== SEARCH BAR FIXED STYLES ===== */
+.search-container {
+  max-width: 600px;
+  width: calc(100% - 20px);
+  margin: 0 auto 40px;
+  position: relative;
+  padding: 0 10px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 45px 12px 20px;
+  border: 2px solid var(--primary);
+  border-radius: 30px;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--secondary);
+  box-shadow: 0 0 8px rgba(44, 95, 45, 0.2);
+}
+
+.search-icon {
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary);
+  pointer-events: none;
+  background: transparent;
+}

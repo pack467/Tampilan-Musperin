@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musperin Admin Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', system-ui, sans-serif;
+        }
+
+        /* Body Styling */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f8fff8;
+        }
+
+        /* Container */
+        .container {
+            width: 100%;
+            max-width: 440px;
+            padding: 1rem;
+        }
+
+        /* Login Card */
+        .login-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(76, 175, 80, 0.1);
+            border: 2px solid #c8e6c9;
+            transition: all 0.3s ease;
+        }
+
+        .login-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(76, 175, 80, 0.15);
+        }
+
+        /* Branding Section */
+        .branding {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            border: 2px solid #4CAF50;
+            object-fit: contain;
+        }
+
+        h1 {
+            color: #1B5E20;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            color: #4a7850;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        /* Input Fields */
+        .input-group {
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 1rem 1.2rem 1rem 3rem;
+            border: 1px solid #e0f2e9;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: #f8fff8;
+            color: #2E7D32;
+            transition: all 0.2s ease;
+        }
+
+        .input-field:focus {
+            border-color: #4CAF50;
+            box-shadow: 0 0 8px rgba(76, 175, 80, 0.1);
+            outline: none;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #81C784;
+            font-size: 1.1rem;
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: #4CAF50;
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .submit-btn:hover {
+            background: #45a049;
+            transform: translateY(-1px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .login-card {
+                padding: 1.5rem;
+            }
+            
+            .logo {
+                width: 70px;
+                height: 70px;
+            }
+
+            h1 {
+                font-size: 1.4rem;
+            }
+
+            .tagline {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login-card">
+            <div class="branding">
+                <img src="../images/logo.png" alt="Logo" class="logo">
+                <h1>Admin Panel</h1>
+                <p class="tagline">Selamat datang di sistem administrasi Musperin</p>
+            </div>
+
+            <form>
+                <div class="input-group">
+                    <i class="fas fa-user input-icon"></i>
+                    <input type="text" class="input-field" placeholder="Username" required>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" class="input-field" placeholder="Password" required>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-sign-in-alt"></i> Masuk Sekarang
+                </button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

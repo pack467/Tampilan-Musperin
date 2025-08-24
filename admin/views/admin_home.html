@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Admin Panel Musperin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/sidebar.css">
+    <link rel="stylesheet" href="../styles/admin_home.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+    
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <h2>Musperin Admin Panel</h2>
+        <div class="sidebar-menu">
+            <a href="admin_home.html" class="active">
+                <i class="fas fa-home icon"></i>
+                <span class="text">Beranda</span>
+            </a>
+            <a href="add_collection.html">
+                <i class="fas fa-book icon"></i>
+                <span class="text">Koleksi</span>
+            </a>
+            <a href="add_news.html">
+                <i class="fas fa-newspaper icon"></i>
+                <span class="text">Berita</span>
+            </a>
+            <a href="add_activity.html">
+                <i class="fas fa-calendar-alt icon"></i>
+                <span class="text">Kegiatan</span>
+            </a>
+            <a href="add_profile.html">
+                <i class="fas fa-info-circle icon"></i>
+                <span class="text">Profile</span>
+            </a>
+            <a href="add_carousel.html">
+                <i class="fas fa-images icon"></i>
+                <span class="text">Carousel</span>
+            </a>
+            <a href="add_account.html">
+                <i class="fas fa-user-tie icon"></i>
+                <span class="text">Akun</span>
+            </a>
+            <a href="history.html">
+                <i class="fas fa-history icon"></i>
+                <span class="text">Histori</span>
+            </a>
+        </div>
+
+        <button class="logout-button" onclick="logout()">
+            <i class="fas fa-sign-out-alt"></i>
+            <span class="text">Keluar</span> <!-- Teks "Keluar" hanya muncul di desktop -->
+        </button>
+
+        <button class="toggle-button" onclick="toggleSidebar()">
+            <i class="fas fa-angle-left" id="toggle-icon"></i>
+        </button>
+    </div>
+
+    <div class="content" id="content">
+        <div class="main-content">
+            <div class="header">
+                <h1>Selamat Datang Admin</h1>
+            </div>
+
+            <div class="welcome-message">
+                Selamat datang di Admin Panel Museum Perkebunan Indonesia. Kelola koleksi, kegiatan, berita, dan data pegawai
+                dengan mudah melalui panel ini untuk memberikan pengalaman terbaik bagi pengunjung website Musperin.
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="card">
+                    <i class="fas fa-users icon"></i>
+                    <h3>Pengunjung Bulan ini</h3>
+                    <p>1,234</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-user-tie icon"></i>
+                    <h3>Jumlah Akun</h3>
+                    <p>456</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-calendar-check icon"></i>
+                    <h3>Banyak Kegiatan</h3>
+                    <p>78</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-book-open icon"></i>
+                    <h3>Banyak Koleksi</h3>
+                    <p>90</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-newspaper icon"></i>
+                    <h3>Banyak Berita</h3>
+                    <p>12</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-user-friends icon"></i>
+                    <h3>Jumlah Pegawai</h3>
+                    <p>30</p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-share icon"></i>
+                    <h3>Total Share</h3>
+                    <p>30</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-images icon"></i>
+                    <h3>Jumlah Caraousel</h3>
+                    <p>3</p>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-header">
+                    <h3 class="chart-title">Grafik Pengunjung Hari Ini</h3>
+                    <div class="visitor-count">Jumlah Pengunjung Hari ini: 258</div>
+                </div>
+                <canvas id="visitorChart"></canvas>
+            </div>
+
+            <div class="copyright-footer">
+                © 2025 Musperin Admin Panel. All rights reserved.
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../scripts/charts.js"></script>
+    <script src="../scripts/sidebar.js"></script>
+    <script src="../scripts/logout.js"></script>
+
+    </body>
+</html>
